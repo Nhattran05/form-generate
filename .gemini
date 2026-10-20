@@ -1,0 +1,95 @@
+# Nhật Ký Dự Án (.gemini) - Hệ Thống Chuyển Đổi JSON Sang PDF Mẫu Bệnh Án (TT 32/2023/TT-BYT)
+
+## [2026-10-20 09:24:04 +07:00] - Khởi tạo dự án FastAPI + React Medical Form Generator
+
+### 1. Vấn đề (Issues & Requirements)
+- Xây dựng ứng dụng Fullstack (FastAPI + React) nhận dữ liệu bệnh án dạng JSON và chuyển đổi sang PDF theo đúng chuẩn Phụ lục XXVIII (Thông tư 32/2023/TT-BYT gồm 29 mẫu bệnh án từ `01/BV1` đến `29/BV1`).
+- Phân tích các điểm chung của 29 mẫu bệnh án để tạo bộ Component tái sử dụng (Reusable Primitives & Sections), giúp khi thêm mẫu bệnh án mới chỉ cần khai báo Schema/Config mà không phải viết lại giao diện.
+- Thiết kế giao diện Split-View đẹp và đơn giản: Cột trái chọn mẫu + JSON Editor + Quick Form Editor, cột phải Live Preview khổ giấy A4 chuẩn bản in Bộ Y tế.
+- Hỗ trợ cơ chế Dual-Engine: Xuất PDF chuẩn A4 từ bộ Component HTML/CSS (trên trình duyệt và qua FastAPI) kèm bộ chuyển đổi dự phòng sang mã nguồn `.tex` (LaTeX).
+- Thiết kế cấu trúc thư mục dạng module độc lập (`shared-schemas/`, `frontend/src/medical-forms/`, `backend/app/services/`) dễ dàng chỉnh sửa và di chuyển (moving code) sang các dự án khác.
+
+### 2. Thay đổi Code (Code Changes)
+- Định nghĩa hệ thống kiểu dữ liệu TypeScript (`form.types.ts`) và Pydantic Schemas (`form_payload.py`) chuẩn hóa cho toàn bộ các phần của bệnh án:
+  - `header`, `hanhChinh`, `quanLyNguoiBenh`, `chanDoan`, `tinhTrangRaVien`, `benhAn` (Lý do vào viện, Hỏi bệnh, Tiền sử, Khám bệnh, Sinh hiệu, Chuyên khoa), `tongKet` (Tổng kết bệnh án & bàn giao hồ sơ).
+- Xây dựng các Atomic Primitives trong `frontend/src/medical-forms/primitives/`:
+  - `A4Page`: Khung giấy chuẩn A4 hỗ trợ in ấn (`@media print`) và hiển thị trực quan.
+  - `DottedField` & `DottedTextarea`: Trường hiển thị nhãn kèm dòng chấm chấm tự động lấp đầy và đặt dữ liệu JSON ngay trên dòng chấm.
+  - `CharBoxes`: Cụm ô vuông ký tự/mã số dùng cho Ngày sinh, Tuổi, Mã ICD-10, Số thẻ BHYT, Para.
+  - `OptionCheck` & `OptionGroup`: Hiển thị danh sách lựa chọn kèm ô vuông đánh dấu `X`/`✓`.
+  - `VitalsBox`: Khung sinh hiệu chuẩn đặt bên phải mục Khám toàn thân.
+  - `RelatedCharacteristicsTable`: Bảng 6 đặc điểm liên quan bệnh (Dị ứng, Ma tuý, Rượu bia, Thuốc lá, Thuốc lào, Khác).
+  - `SurgeryTable`: Bảng phẫu thuật / thủ thuật.
+  - `HandoverFooter`: Bảng bàn giao Hồ sơ, phim, ảnh và chữ ký tổng kết bệnh án.
+  - `SignatureBlock`: Khối chữ ký Giám đốc bệnh viện, Trưởng khoa, Bác sỹ làm bệnh án / điều trị.
+- Xây dựng các Shared Sections trong `frontend/src/medical-forms/sections/`:
+  - `HeaderSection`, `AdminSection`, `PatientManagementSection`, `DiagnosisSection`, `DischargeStatusSection`, `ClinicalRecordSection`, `SummarySection`.
+- Xây dựng `MedicalFormRenderer` kết hợp Template Config + JSON Payload để render tự động cả 29 mẫu (cài đặt chi tiết 5 nhóm mẫu đại diện: `01/BV1` Nội khoa, `02/BV1` Nhi khoa, `10/BV1` Ngoại khoa, `15/BV1` Ngoại trú chung, `18/BV1` Nội trú YHCT và cấu hình động cho các mẫu còn lại).
+- Xây dựng Backend FastAPI (`backend/app/`):
+  - API lấy danh sách 29 mẫu bệnh án, cấu hình Schema và JSON mẫu (`GET /api/v1/templates`, `GET /api/v1/templates/{template_id}`).
+  - API xuất HTML chuẩn A4 (`POST /api/v1/render/html`), xuất PDF (`POST /api/v1/render/pdf`), và xuất file LaTeX `.tex` (`POST /api/v1/render/latex`).
+
+### 3. Thay đổi Cấu trúc (Structure Changes)
+- Tạo mới `.gemini` tại thư mục gốc `D:\Form Generating\.gemini`.
+- Tạo mới `shared-schemas/` chứa `registry.json`, `templates/*.json`, `samples/*.json`.
+- Tạo mới `backend/` chứa ứng dụng FastAPI (`requirements.txt`, `app/main.py`, `app/api/routes_form.py`, `app/schemas/form_payload.py`, `app/services/html_builder.py`, `app/services/pdf_renderer.py`, `app/services/latex_builder.py`).
+- Tạo mới `frontend/` chứa ứng dụng React + Vite + TypeScript + TailwindCSS (`src/medical-forms/` tách riêng hoàn toàn với `src/workspace-ui/`).
+- Tạo mới `README.md` hướng dẫn chạy ứng dụng và cách di chuyển module / thêm mẫu bệnh án mới.
+
+
+## [2026-10-20 10:31:04 +07:00] - Giai đoạn 2: Full Form Editor (100% trường + Inline Edit A4) & Chuyển đổi PDF qua LaTeX (.tex -> .pdf)
+
+### 1. Vấn đề (Issues & Requirements)
+- Xây dựng giao diện "Form Nhập Đầy Đủ" (`FullFormEditor`) bao phủ 100% các trường dữ liệu của mọi mẫu bệnh án (Hành chính, Quản lý người bệnh + bảng chuyển khoa động, Chẩn đoán & Tình trạng ra viện, Bệnh án & Khám chuyên khoa/cơ quan động, Đặc điểm liên quan bệnh, Quá trình sinh trưởng Nhi, Tứ chẩn YHCT, Tổng kết bệnh án, Bảng phẫu thuật động, Bảng bàn giao hồ sơ phim ảnh) để người dùng có thể nhập tay hoàn toàn mà không cần chỉnh sửa ở JSON.
+- Hỗ trợ chỉnh sửa trực tiếp (Inline Edit / Click-to-edit) ngay trên tờ giấy A4 ở cột bên phải và đồng bộ 2 chiều tức thì với Form bên trái và dữ liệu JSON.
+- Thay đổi hoàn toàn cơ chế xuất PDF trên Backend FastAPI sang luồng `JSON -> .tex (LaTeX) -> .pdf` (sử dụng `xelatex` ưu tiên với font Times New Roman chuẩn hệ thống và tự động fallback sang `pdflatex`), loại bỏ hoàn toàn sự phụ thuộc vào trình duyệt (Browser) trên server.
+
+### 2. Thay đổi Code (Code Changes)
+- **Backend (`backend/app/services/latex_builder.py`)**:
+  - Nâng cấp hàm `build_latex_from_json(template_config, data)` hỗ trợ tự động nhận diện engine bằng `\usepackage{iftex}` (`\ifXeTeX` dùng `fontspec` + `Times New Roman`, ngược lại dùng `utf8` + `vietnamese`).
+  - Bổ sung đầy đủ các macro LaTeX vẽ ô vuông mã số (`\charbox`, `\charboxes`), ô checkbox (`\checkbox`), dòng chấm chấm (`\dotline`), khung sinh hiệu, bảng 6 đặc điểm liên quan bệnh, quá trình sinh trưởng Nhi khoa, chẩn đoán Ngoại khoa, chẩn đoán song song 2 cột YHHĐ - YHCT, Tứ chẩn YHCT, bảng Phẫu thuật/Thủ thuật, và bảng Hồ sơ phim ảnh.
+- **Backend (`backend/app/services/pdf_renderer.py`)**:
+  - Thêm hàm `render_latex_to_pdf_bytes(tex_source: str) -> bytes` gọi `xelatex` (hoặc fallback `pdflatex`) trong thư mục tạm để biên dịch `.tex` sang `.pdf` hoàn toàn độc lập với trình duyệt.
+- **Backend (`backend/app/api/routes_form.py`)**:
+  - Cập nhật endpoint `POST /api/v1/render/pdf` chuyển từ JSON -> `build_latex_from_json` -> `render_latex_to_pdf_bytes` -> trả về file PDF.
+- **Frontend (`frontend/src/workspace-ui/components/FullFormEditor.tsx`)**:
+  - Tạo mới component `FullFormEditor` chia làm 5 phân mục chuẩn Bộ Y tế kèm ô tìm kiếm trường dữ liệu, hỗ trợ nhập toàn bộ 100% trường và các bảng động (Chuyển khoa, Phẫu thuật/Thủ thuật, Khám các cơ quan, Đặc điểm liên quan bệnh).
+- **Frontend (`frontend/src/workspace-ui/components/JsonEditorPanel.tsx`, `PdfPreviewPanel.tsx`)**:
+  - Đặt tab `Nhập Liệu Đầy Đủ` làm mặc định và hỗ trợ chế độ sửa trực tiếp (`contentEditable` / interactive toggle) ngay trên trang giấy A4 Preview.
+
+### 3. Thay đổi Cấu trúc (Structure Changes)
+- Tạo mới `frontend/src/workspace-ui/components/FullFormEditor.tsx`.
+- Cập nhật `backend/app/services/latex_builder.py`, `backend/app/services/pdf_renderer.py`, `backend/app/api/routes_form.py`.
+- Cập nhật `frontend/src/workspace-ui/components/JsonEditorPanel.tsx`, `frontend/src/workspace-ui/components/PdfPreviewPanel.tsx`, `frontend/src/workspace-ui/components/TopNavbar.tsx`.
+
+
+## [2026-10-20 10:45:28 +07:00] - Khôi phục đủ 4 Tab chức năng trên Panel Trái & Hỗ trợ Dán trực tiếp JSON
+
+### 1. Vấn đề (Issues & Requirements)
+- Người dùng yêu cầu giữ đầy đủ cả 4 chức năng trên thanh công cụ cột trái: (1) Chỉnh sửa JSON / Form Nhập Nhanh, (2) Nhập Đầy Đủ (100% trường), (3) JSON Raw (Dán & sửa trực tiếp JSON không cần dùng nút upload file), và (4) Cấu trúc Component.
+- Đảm bảo việc nhập JSON có thể dán (paste) trực tiếp vào khung soạn thảo bất kỳ lúc nào.
+
+### 2. Thay đổi Code (Code Changes)
+- Cập nhật `frontend/src/workspace-ui/components/JsonEditorPanel.tsx`:
+  - Hiển thị đầy đủ 4 nút chuyển chế độ rõ ràng trên thanh Tab Header:
+    1. `Chỉnh sửa JSON (Dán trực tiếp)`: Cho phép dán (paste) trực tiếp JSON vào khung hoặc bấm nút "Dán từ Clipboard", tự động parse và render sang trang A4 ngay lập tức.
+    2. `Nhập Đầy Đủ`: Giao diện `FullFormEditor` nhập tay toàn bộ 100% các trường của bệnh án.
+    3. `Form Nhập Nhanh`: Giao diện chỉnh sửa nhanh các thông tin cốt lõi (Hành chính, Sinh hiệu, Chẩn đoán).
+    4. `Cấu Trúc Component`: Hiển thị JSON Schema của mẫu bệnh án và hướng dẫn di chuyển code.
+
+### 3. Thay đổi Cấu trúc (Structure Changes)
+- Cập nhật `frontend/src/workspace-ui/components/JsonEditorPanel.tsx` (không xóa hay di chuyển file).
+
+
+## [2026-10-20 10:49:15 +07:00] - Tạo file cấu hình .gitignore cho toàn bộ dự án
+
+### 1. Vấn đề (Issues & Requirements)
+- Dự án chưa có file `.gitignore`, dẫn đến các thư mục chứa thư viện nặng và file tạm như `frontend/node_modules/`, `backend/.venv/`, `frontend/dist/`, `tsconfig.tsbuildinfo`, `__pycache__` cùng các file tạm thời khi biên dịch LaTeX bị theo dõi bởi Git.
+- Cần tạo file `.gitignore` tiêu chuẩn cho dự án Fullstack (Python FastAPI + Node/React Vite TypeScript + LaTeX).
+
+### 2. Thay đổi Code (Code Changes)
+- Không chỉnh sửa code logic.
+
+### 3. Thay đổi Cấu trúc (Structure Changes)
+- Tạo mới file `.gitignore` tại thư mục gốc `D:\Form Generating\.gitignore`.
+

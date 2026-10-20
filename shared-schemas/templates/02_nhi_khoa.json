@@ -1,0 +1,29 @@
+{
+  "id": "02_nhi_khoa",
+  "code": "02/BV1",
+  "officialCode": "MS: 02/BV-01",
+  "title": "BỆNH ÁN NHI KHOA",
+  "layoutGroup": "pediatric_standard",
+  "config": {
+    "headerVariant": "standard",
+    "adminVariant": "pediatric",
+    "managementVariant": "inpatient",
+    "diagnosisVariant": "internal",
+    "dischargeVariant": "standard",
+    "hasRelatedCharacteristicsTable": false,
+    "hasGrowthHistory": true,
+    "hasSurgicalBlock": false,
+    "hasTraditionalMedicine": false,
+    "vitalsFields": ["mach", "nhietDo", "huyetAp", "nhipTho", "canNang"],
+    "organFields": [
+      { "key": "tuanHoan", "label": "+ Tuần hoàn", "lines": 3 },
+      { "key": "hoHap", "label": "+ Hô hấp", "lines": 3 },
+      { "key": "tieuHoa", "label": "+ Tiêu hoá", "lines": 3 },
+      { "key": "thanTietNieuSinhDuc", "label": "+ Thận - Tiết niệu - Sinh dục", "lines": 3 },
+      { "key": "thanKinh", "label": "+ Thần kinh", "lines": 3 },
+      { "key": "coXuongKhop", "label": "+ Cơ - Xương - Khớp", "lines": 3 },
+      { "key": "taiMuiHongRangHamMatMatDinhDuong", "label": "+ Tai - Mũi - Họng, Răng - Hàm - Mặt, Mắt, Dinh dưỡng và các bệnh lý khác", "lines": 4 }
+    ],
+    "summaryVariant": "internal"
+  }
+}

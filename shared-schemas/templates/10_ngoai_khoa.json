@@ -1,0 +1,32 @@
+{
+  "id": "10_ngoai_khoa",
+  "code": "10/BV1",
+  "officialCode": "MS: 10/BV-01",
+  "title": "BỆNH ÁN NGOẠI KHOA",
+  "layoutGroup": "surgical_standard",
+  "config": {
+    "headerVariant": "standard",
+    "adminVariant": "adult",
+    "managementVariant": "inpatient",
+    "diagnosisVariant": "surgical",
+    "dischargeVariant": "surgical",
+    "hasRelatedCharacteristicsTable": true,
+    "hasGrowthHistory": false,
+    "hasSurgicalBlock": true,
+    "hasTraditionalMedicine": false,
+    "vitalsFields": ["mach", "nhietDo", "huyetAp", "nhipTho", "canNang"],
+    "organFields": [
+      { "key": "tuanHoan", "label": "+ Tuần hoàn", "lines": 3 },
+      { "key": "hoHap", "label": "+ Hô hấp", "lines": 3 },
+      { "key": "tieuHoa", "label": "+ Tiêu hoá", "lines": 3 },
+      { "key": "thanTietNieuSinhDuc", "label": "+ Thận - Tiết niệu - Sinh dục", "lines": 3 },
+      { "key": "thanKinh", "label": "+ Thần kinh", "lines": 3 },
+      { "key": "coXuongKhop", "label": "+ Cơ - Xương - Khớp", "lines": 2 },
+      { "key": "taiMuiHong", "label": "+ Tai - Mũi - Họng", "lines": 2 },
+      { "key": "rangHamMat", "label": "+ Răng - Hàm - Mặt", "lines": 2 },
+      { "key": "mat", "label": "+ Mắt", "lines": 1 },
+      { "key": "noiTietDinhDuongKhac", "label": "+ Nội tiết, dinh dưỡng và các bệnh lý khác", "lines": 2 }
+    ],
+    "summaryVariant": "surgical"
+  }
+}

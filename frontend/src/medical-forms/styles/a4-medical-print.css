@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   CHUẨN IN ẤN BỆNH ÁN BỘ Y TẾ (KHỔ GIẤY A4 - THÔNG TƯ 32/2023/TT-BYT)
+   Có thể copy file CSS này cùng thư mục medical-forms sang bất kỳ dự án nào
+   ========================================================================== */
+
+.a4-page {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 13mm 14mm 13mm 19mm;
+  margin: 0 auto 24px auto;
+  background: #ffffff;
+  color: #000000;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12pt;
+  line-height: 1.38;
+  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.14), 0 4px 10px -2px rgba(15, 23, 42, 0.08);
+  border: 1px solid #e2e8f0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Dòng chấm chấm tự động lấp đầy khoảng trống */
+.med-dotted-row {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: nowrap;
+  width: 100%;
+  margin-bottom: 3px;
+}
+
+.med-dotted-label {
+  white-space: nowrap;
+  padding-right: 4px;
+}
+
+.med-dotted-value {
+  flex: 1;
+  border-bottom: 1px dotted #1e293b;
+  min-height: 1.25em;
+  padding: 0 4px;
+  font-weight: 500;
+  color: #0f172a;
+  word-break: break-word;
+}
+
+.med-dotted-multiline {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent calc(1.42em - 1px),
+    #475569 calc(1.42em - 1px),
+    #475569 1.42em
+  );
+  line-height: 1.42em;
+  min-height: 2.84em;
+  padding: 0 2px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Cụm ô vuông ký tự / mã ICD / BHYT / Ngày sinh */
+.med-char-boxes {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.med-char-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 20px;
+  border: 1px solid #111111;
+  font-size: 10.5pt;
+  font-weight: 600;
+  margin-right: -1px;
+  background: #ffffff;
+  color: #000000;
+  line-height: 1;
+}
+
+/* Ô vuông đánh dấu Checkbox chuẩn biểu mẫu hành chính */
+.med-check-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #111111;
+  font-size: 9.5pt;
+  font-weight: 700;
+  vertical-align: middle;
+  margin-left: 3px;
+  margin-right: 6px;
+  background: #ffffff;
+}
+
+/* Khung bảng Y tế */
+.med-box-frame {
+  border: 1px solid #111111;
+}
+
+table.med-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11.5pt;
+}
+
+table.med-table th,
+table.med-table td {
+  border: 1px solid #111111;
+  padding: 4px 6px;
+  vertical-align: top;
+}
+
+/* Khi in trực tiếp hoặc xuất PDF */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm 14mm 12mm 18mm;
+  }
+
+  body {
+    background: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .a4-page {
+    width: 100% !important;
+    min-height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .a4-page:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+}

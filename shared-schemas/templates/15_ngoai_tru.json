@@ -1,0 +1,21 @@
+{
+  "id": "15_ngoai_tru",
+  "code": "15/BV1",
+  "officialCode": "MS: 15/BV-01",
+  "title": "BỆNH ÁN NGOẠI TRÚ",
+  "layoutGroup": "outpatient_standard",
+  "config": {
+    "headerVariant": "outpatient",
+    "adminVariant": "outpatient",
+    "managementVariant": "none",
+    "diagnosisVariant": "none",
+    "dischargeVariant": "none",
+    "hasRelatedCharacteristicsTable": false,
+    "hasGrowthHistory": false,
+    "hasSurgicalBlock": false,
+    "hasTraditionalMedicine": false,
+    "vitalsFields": ["mach", "nhietDo", "huyetAp", "nhipTho", "canNang"],
+    "organFields": [],
+    "summaryVariant": "outpatient"
+  }
+}

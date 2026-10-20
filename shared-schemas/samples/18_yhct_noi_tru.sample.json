@@ -1,0 +1,221 @@
+{
+  "templateId": "18_yhct_noi_tru",
+  "header": {
+    "soYTe": "Bộ Y Tế",
+    "benhVien": "Bệnh viện Y Học Cổ Truyền Trung Ương",
+    "khoa": "Châm cứu Dưỡng sinh",
+    "buong": "201",
+    "giuong": "06",
+    "tenBenhAn": "BỆNH ÁN NỘI TRÚ Y HỌC CỔ TRUYỀN",
+    "maSo": "MS: 18/BV-01",
+    "maNguoiBenh": "BN-YHCT-4021",
+    "soVaoVien": "VV-2026-3319",
+    "soLuuTru": "LT-2026-3319",
+    "maYT": "012/2026/003319"
+  },
+  "hanhChinh": {
+    "hoVaTen": "VŨ ĐÌNH TRỌNG",
+    "sinhNgay": "19/05/1962",
+    "tuoi": "64",
+    "gioi": 1,
+    "ngheNghiep": "Hưu trí",
+    "maNgheNghiep": "09",
+    "danToc": "Kinh",
+    "maDanToc": "01",
+    "ngoaiKieu": "Việt Nam",
+    "maNgoaiKieu": "VN",
+    "diaChi": {
+      "soNha": "24",
+      "thonPho": "Phố Nguyễn Bỉnh Khiêm",
+      "xaPhuong": "Phường Nguyễn Du",
+      "huyenQuan": "Quận Hai Bà Trưng",
+      "maHuyenQuan": "04",
+      "tinhThanhPho": "Thành phố Hà Nội",
+      "maTinhThanhPho": "01"
+    },
+    "noiLamViec": "Cán bộ hưu trí",
+    "doiTuong": 1,
+    "bhytGiaTriDen": "01/01/2026",
+    "soTheBhyt": "HT2010123987654",
+    "soCCCD": "001062004512",
+    "nguoiNha": "Vũ Minh Hiếu (Con trai) - 24 Nguyễn Bỉnh Khiêm, Hai Bà Trưng, Hà Nội",
+    "dienThoaiNguoiNha": "0913556677"
+  },
+  "quanLyNguoiBenh": {
+    "vaoVien": {
+      "gio": "08",
+      "phut": "45",
+      "ngay": "05/10/2026"
+    },
+    "trucTiepVao": 2,
+    "noiGioiThieu": 1,
+    "vaoVienLanThu": "1",
+    "vaoKhoa": {
+      "khoa": "Châm cứu",
+      "gio": "09",
+      "phut": "30",
+      "ngay": "05/10/2026",
+      "soNgayDT": "15"
+    },
+    "chuyenKhoa": [],
+    "chuyenVien": {
+      "loai": null,
+      "chuyenDen": ""
+    },
+    "raVien": {
+      "gio": "15",
+      "phut": "00",
+      "ngay": "20/10/2026",
+      "hinhThuc": 1
+    },
+    "tongSoNgayDieuTri": "15"
+  },
+  "chanDoan": {
+    "noiChuyenDen": {
+      "ten": "Đau dây thần kinh tọa phải do thoát vị đĩa đệm L4-L5",
+      "ma": "M51.1",
+      "tenYHCT": "Yêu cước thống thể phong hàn thấp kèm can thận hư",
+      "maYHCT": "YCT01"
+    },
+    "kkbCapCuu": {
+      "ten": "Hội chứng thắt lưng hông phải / Thoái hóa cột sống thắt lưng",
+      "ma": "M54.4",
+      "tenYHCT": "Tọa cốt phong (Hàn thấp trở lạc / Can thận âm hư)",
+      "maYHCT": "TCP02"
+    },
+    "khiVaoKhoaDieuTri": {
+      "ten": "Đau thần kinh tọa phải do thoát vị đĩa đệm L4-L5, L5-S1",
+      "ma": "M51.1",
+      "benhKemTheo": "Thoái hóa cột sống thắt lưng",
+      "maKemTheo": "M47.8",
+      "tenYHCT": "Yêu cước thống do phong hàn thấp thừa cơ can thận hư",
+      "maYHCT": "YCT01",
+      "benhKemTheoYHCT": "Chứng Tý",
+      "maKemTheoYHCT": "CT01"
+    },
+    "thuThuat": true,
+    "phauThuat": false,
+    "raVien": {
+      "benhChinh": "Đau thần kinh tọa phải do thoát vị đĩa đệm L4-L5 đã ổn định",
+      "maBenhChinh": "M51.1",
+      "benhKemTheo": "Thoái hóa cột sống thắt lưng",
+      "maBenhKemTheo": "M47.8",
+      "benhChinhYHCT": "Yêu cước thống (Can thận hư kiêm phong hàn thấp)",
+      "maBenhChinhYHCT": "YCT01",
+      "benhKemTheoYHCT": "Chứng Tý",
+      "maBenhKemTheoYHCT": "CT01",
+      "taiBien": false,
+      "bienChung": false
+    }
+  },
+  "tinhTrangRaVien": {
+    "ketQuaDieuTri": 2,
+    "giaiPhauBenh": null,
+    "tuVong": {
+      "gio": "",
+      "phut": "",
+      "ngay": "",
+      "nguyenNhan": null,
+      "thoiGian": null,
+      "nguyenNhanChinh": "",
+      "maNguyenNhanChinh": "",
+      "khamNghiemTuThi": false,
+      "chanDoanGiaiPhauTuThi": "",
+      "maGiaiPhauTuThi": ""
+    },
+    "ngayKy": "20",
+    "thangKy": "10",
+    "namKy": "2026",
+    "giamDocBenhVien": "PGS.TS. Vũ Nam",
+    "truongKhoa": "TS.BS. Trần Phương Đông"
+  },
+  "benhAn": {
+    "lyDoVaoVien": "Đau vùng cột sống thắt lưng lan xuống mặt sau đùi và cẳng chân phải",
+    "vaoNgayThu": "14",
+    "hoiBenh": {
+      "quaTrinhBenhLy": "Bệnh nhân đau âm ỉ vùng thắt lưng nhiều năm. Khoảng 2 tuần nay sau khi bê vật nặng và gặp mưa lạnh, đau vùng cột sống thắt lưng tăng lên dữ dội, lan dọc theo mặt sau mông, mặt sau đùi và mặt ngoài cẳng chân phải xuống tới mắt cá ngoài, kèm tê bì, đi lại hạn chế.",
+      "tienSuBanThan": "Thoái hóa cột sống thắt lưng 4 năm, không dị ứng thuốc, không hút thuốc lá.",
+      "tienSuGiaDinh": "Bình thường."
+    },
+    "khamBenh": {
+      "toanThan": "Bệnh nhân tỉnh, tiếp xúc tốt, thể trạng cân đối.",
+      "sinhHieu": {
+        "mach": "74",
+        "nhietDo": "36.6",
+        "huyetAp": "125/80",
+        "nhipTho": "18",
+        "canNang": "62",
+        "chieuCao": "165",
+        "bmi": "22.8"
+      },
+      "coQuan": {
+        "tuanHoan": "Nhịp tim đều 74 lần/phút, tiếng tim T1 T2 rõ.",
+        "hoHap": "Rì rào phế nang hai phế trường êm dịu, không rales.",
+        "tieuHoa": "Bụng mềm, không chướng, đại tiện bình thường.",
+        "thanTietNieuSinhDuc": "Tiểu tiện tự chủ, nước tiểu trong.",
+        "thanKinh": "Hội chứng cột sống (+): Co cứng cơ cạnh sống L3-S1 hai bên, ấn đau điểm cạnh sống L4-L5, L5-S1 phải. Hội chứng rễ (+): Dấu hiệu Lasègue chân phải 45 độ, hệ thống điểm Valleix phải (+).",
+        "coXuongKhop": "Hạn chế cúi cột sống thắt lưng (nghiệm pháp tay đất 25cm).",
+        "taiMuiHong": "Bình thường.",
+        "rangHamMat": "Bình thường.",
+        "mat": "Bình thường.",
+        "noiTietDinhDuongKhac": "Bình thường."
+      },
+      "xetNghiemCanLam": "MRI cột sống thắt lưng, X-quang cột sống thắt lưng thẳng nghiêng, Công thức máu, Sinh hóa máu.",
+      "tomTatBenhAn": "Bệnh nhân nam 64 tuổi vào viện vì đau thắt lưng lan chân phải. Khám có hội chứng cột sống và hội chứng rễ L5, S1 bên phải rõ (Lasègue phải 45 độ). MRI cột sống thắt lưng: Thoát vị đĩa đệm L4-L5 chèn ép rễ L5 phải."
+    },
+    "yhct": {
+      "vongChan": "Thần tỉnh, sắc mặt hồng nhạt, hình thái cân đối, đi lại tậpễnh nghiêng người sang phải. Chất lưỡi hồng nhạt, rêu lưỡi trắng mỏng hơi nhớt.",
+      "vanChan": "Tiếng nói rõ, hơi thở đều, không ho, không nấc, không có mùi cơ thể bệnh lý.",
+      "vanChanHoi": "Sợ lạnh, thích chườm ấm vùng lưng. Đau vùng thắt lưng lan xuống chân phải tăng khi trời lạnh ẩm, chườm nóng đỡ đau. Ăn ngủ tạm, tiểu trong, đại tiện bình thường.",
+      "thietChan": "Da tay chân hơi lạnh, cơ vùng thắt lưng co cứng ấn đau (cự án kiêm thiện án). Mạch trầm huyền sác nhẹ ở bộ Xích hai bên.",
+      "tomTatTuChan": "Người bệnh có biểu hiện của chứng Yêu cước thống: Đau lưng mỏi gối, sợ lạnh thích ấm, rêu lưỡi trắng mỏng, mạch trầm huyền.",
+      "bienChungLuanTri": "Do chính khí suy giảm (Can thận hư tổn) làm cốt tủy bất túc, tà khí Phong - Hàn - Thấp nhân lúc chính khí hư xâm nhập vào kinh Bàng quang và Đởm vùng thắt lưng gây khí huyết ứ trệ (bất thông tắc thống).",
+      "chanDoanYHCT": {
+        "benhDanh": "Yêu cước thống (Tọa cốt phong)",
+        "batCuong": "Biểu trung kiêm Lý - Hư trung hiệp Thực - Hàn - Âm chứng",
+        "nguyenNhan": "Ngoại nhân (Phong hàn thấp) kết hợp Nội thương (Can thận hư)",
+        "tangPhu": "Can, Thận",
+        "kinhMach": "Kinh Túc thái dương Bàng quang, Túc thiếu dương Đởm",
+        "dinhViBenh": "Kinh lạc, Cân cốt (Khí huyết)"
+      },
+      "dieuTriYHCT": {
+        "phapDieuTri": "Khu phong tán hàn, trừ thấp thông lạc, bổ can thận, mạnh gân cốt",
+        "phuongDuoc": "Bài thuốc Độc hoạt ký sinh thang gia giảm (Độc hoạt 12g, Tang ký sinh 16g, Tần giao 10g, Phòng phong 10g, Đỗ trọng 12g, Ngưu tất 12g, Đương quy 12g, Xuyên khung 10g, Bạch thược 12g, Thục địa 16g, Quế chi 6g, Cam thảo 6g) sắc uống ngày 01 thang chia 2 lần.",
+        "khongDungThuoc": "Điện châm các huyệt: Thận du, Đại trường du, Hoàn khiêu, Ủy trung, Thừa sơn, Dương lăng tuyền, Côn lôn bên phải (25 phút/lần/ngày) + Thủy châm Vitamin B12 + Xoa bóp bấm huyệt và kéo giãn cột sống thắt lưng."
+      }
+    },
+    "chanDoanKhoa": {
+      "benhChinh": "Đau thần kinh tọa phải do thoát vị đĩa đệm L4-L5 / Yêu cước thống",
+      "benhKemTheo": "Thoái hóa cột sống thắt lưng",
+      "phanBiet": "Hẹp ống sống thắt lưng"
+    },
+    "tienLuong": "Khá, đáp ứng tốt với điều trị kết hợp YHHĐ và YHCT.",
+    "huongDieuTri": "Kết hợp thuốc sắc YHCT (Độc hoạt ký sinh thang), Điện châm, Xoa bóp bấm huyệt, Kéo giãn cột sống và thuốc giảm đau giãn cơ YHHĐ trong 5 ngày đầu.",
+    "ngayLamBenhAn": "05",
+    "thangLamBenhAn": "10",
+    "namLamBenhAn": "2026",
+    "bacSyLamBenhAn": "ThS.BS. Nguyễn Trọng Nghĩa"
+  },
+  "tongKet": {
+    "quaTrinhBenhLyVaDienBien": "Sau 15 ngày điều trị kết hợp thuốc thang YHCT, điện châm, xoa bóp bấm huyệt và vật lý trị liệu kéo giãn cột sống, bệnh nhân giảm 80% triệu chứng đau lưng và tê chân phải, góc Lasègue chân phải cải thiện từ 45 độ lên 80 độ, đi lại nhẹ nhàng.",
+    "tomTatKetQuaXetNghiem": "- MRI cột sống thắt lưng: Thoát vị đĩa đệm L4-L5 trung tâm lệch phải 4mm chèn ép rễ L5 phải.\n- Công thức máu, chức năng gan thận bình thường.",
+    "phuongPhapDieuTri": "YHHĐ: Eperison 50mg x 2v/ngày, Gabapentin 300mg x 1v/ngày.\nYHCT: Độc hoạt ký sinh thang gia giảm + Điện châm + Xoa bóp bấm huyệt.",
+    "tinhTrangRaVien": "Bệnh nhân tỉnh, đỡ đau lưng nhiều, hết tê buốt cẳng chân phải, vận động cột sống tốt.",
+    "huongDieuTriTiep": "Tiếp tục uống thuốc hoàn YHCT 14 ngày, tránh bê vác nặng, tập các bài tập dưỡng sinh cột sống thắt lưng.",
+    "hoSoPhimAnh": {
+      "xQuang": "02",
+      "ctScanner": "00",
+      "sieuAm": "01",
+      "xetNghiem": "03",
+      "khacLoai": "Phim MRI",
+      "khacSoTo": "02",
+      "toanBoHoSo": "16"
+    },
+    "nguoiGiaoHoSo": "ĐD. Bùi Thị Thanh",
+    "nguoiNhanHoSo": "CN. Hoàng Văn Nam",
+    "ngayTongKet": "20",
+    "thangTongKet": "10",
+    "namTongKet": "2026",
+    "bacSyDieuTri": "ThS.BS. Nguyễn Trọng Nghĩa"
+  }
+}

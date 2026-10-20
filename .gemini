@@ -93,3 +93,24 @@
 ### 3. Thay đổi Cấu trúc (Structure Changes)
 - Tạo mới file `.gitignore` tại thư mục gốc `D:\Form Generating\.gitignore`.
 
+
+
+## [2026-10-20 11:08:50 +07:00] - Khắc phục lỗi PDF Output & Tinh chỉnh chế bản LaTeX chuẩn 100% mẫu Bộ Y tế
+
+### 1. Vấn đề (Issues & Requirements)
+- File `01_noi_khoa_NGUYỄN_VĂN_MINH.pdf` bị vỡ bố cục (các trường xếp dọc 1 cột, mất khung bảng) do tiến trình `uvicorn` cũ (chạy từ Giai đoạn 1 không có `--reload`) vẫn giữ code render HTML thiếu stylesheet Tailwind trong bộ nhớ.
+- Ngoài ra, qua kiểm tra trực quan file PDF sinh từ LaTeX (`check_latex_01.pdf`), cần tinh chỉnh thêm:
+  1. Căn chỉnh kích thước chữ (`10.5pt`), lề trang và khoảng cách dòng để toàn bộ **Header + Mục I, II, III, IV + Chữ ký Giám đốc/Trưởng khoa** nằm trọn vẹn trong **Trang 1** đúng chuẩn mẫu Bộ Y tế (không bị tràn mục IV sang trang 2).
+  2. Xử lý mã ICD-10 (VD: `I20.0`) khi đưa vào 4 ô vuông không bị mất số sau dấu chấm (`[I][2][0][0]`), và khử viền đôi giữa các ô vuông liền kề bằng `\hspace{-\fboxrule}`.
+  3. Trình bày mục `15. Vào khoa` và `16. Chuyển khoa` có ô khung tên Khoa và 2 ô vuông Số ngày điều trị đúng như bản gốc.
+  4. Gộp liền mạch khung `B. Tổng kết bệnh án` (mục 1 đến 5) và bảng bàn giao `Hồ sơ, phim, ảnh` trong một bảng thống nhất.
+  5. Khởi động lại server FastAPI (`uvicorn --reload`) để áp dụng bộ LaTeX PDF Engine mới nhất.
+
+### 2. Thay đổi Code (Code Changes)
+- Cập nhật `backend/app/services/latex_builder.py`:
+  - Tinh chỉnh macro `\charbox`, `\checkbox`, `\dotfillField`, lề trang A4 và bố cục Trang 1, Trang 2, Trang 3.
+  - Chuẩn hóa hiển thị mã ICD 4 ô, khung Vào khoa / Chuyển khoa, bảng Chẩn đoán có cột `MÃ`, và bảng `B. Tổng kết bệnh án`.
+- Khởi động lại tiến trình Backend FastAPI (`port 8000`) với cờ `--reload`.
+
+### 3. Thay đổi Cấu trúc (Structure Changes)
+- Cập nhật `backend/app/services/latex_builder.py`.

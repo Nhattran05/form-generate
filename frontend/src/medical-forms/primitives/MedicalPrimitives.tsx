@@ -81,7 +81,7 @@ export const CharBoxes: React.FC<{
   className?: string;
 }> = ({ value = '', length, className = '' }) => {
   const clean = String(value ?? '')
-    .replace(/[/\-\s]/g, '')
+    .replace(/[/\-.\s]/g, '')
     .slice(0, length);
   const chars = Array.from({ length }, (_, idx) => clean[idx] || '');
   return (

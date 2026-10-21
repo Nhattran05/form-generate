@@ -48,20 +48,14 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
       <div className="flex items-center gap-3 flex-wrap">
         <div className="flex items-center gap-2.5">
           <div className="w-9 h-9 rounded-lg bg-teal-600 text-white flex items-center justify-center font-bold shadow-sm">
-            BA
+
           </div>
           <div>
             <div className="flex items-center gap-2">
               <span className="font-bold text-slate-800 text-sm tracking-tight">
-                Medical Form Studio
-              </span>
-              <span className="text-[11px] font-medium px-2 py-0.5 rounded-full bg-teal-50 text-teal-700 border border-teal-200">
-                LaTeX PDF Engine
+                Medical Form
               </span>
             </div>
-            <p className="text-xs text-slate-500">
-              Nhập tay 100% trường hoặc JSON → Chuyển sang .TEX → Biên dịch PDF
-            </p>
           </div>
         </div>
 
@@ -173,7 +167,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
           ) : (
             <FileDown className="w-3.5 h-3.5" />
           )}
-          <span>{isExportingPdf ? 'Đang dịch .TEX → PDF...' : 'Xuất PDF (LaTeX)'}</span>
+          <span>{isExportingPdf ? 'Đang dịch .TEX → PDF...' : 'Xuất PDF'}</span>
         </button>
       </div>
     </header>

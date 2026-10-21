@@ -114,3 +114,16 @@
 
 ### 3. Thay đổi Cấu trúc (Structure Changes)
 - Cập nhật `backend/app/services/latex_builder.py`.
+
+
+## [2026-10-21 09:14:11 +07:00] - Tinh giản Panel Trái: Chỉ giữ 2 Tab "Nhập Đầy Đủ" và "Chỉnh sửa JSON"
+
+### 1. Vấn đề (Issues & Requirements)
+- Người dùng yêu cầu bỏ 2 nút/tab "Form Nhập Nhanh" (`quick-form`) và "Cấu Trúc Component" (`schema`), chỉ giữ lại 2 chức năng cốt lõi: **Nhập Đầy Đủ** (`full-form`) và **Chỉnh sửa JSON** (`json`).
+
+### 2. Thay đổi Code (Code Changes)
+- Cập nhật `frontend/src/workspace-ui/components/JsonEditorPanel.tsx`:
+  - Loại bỏ 2 tab `quick-form` và `schema`, chỉ giữ lại 2 tab chuyển đổi: `Nhập Đầy Đủ (Form)` và `Chỉnh sửa JSON`.
+
+### 3. Thay đổi Cấu trúc (Structure Changes)
+- Không thay đổi cấu trúc file/thư mục.

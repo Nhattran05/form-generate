@@ -1,0 +1,225 @@
+{
+  "templateId": "04_phu_khoa",
+  "header": {
+    "soYTe": "Sở Y tế TP. Hà Nội",
+    "benhVien": "Bệnh viện Hữu Nghị Việt Đức",
+    "khoa": "Phẫu thuật Tiêu hóa",
+    "buong": "205",
+    "giuong": "04",
+    "tenBenhAn": "BỆNH ÁN PHỤ KHOA",
+    "maSo": "MS: 04/BV-01",
+    "soLuuTru": "2026-NGK-8821",
+    "maYT": "010/2026/054321"
+  },
+  "hanhChinh": {
+    "hoVaTen": "PHẠM HOÀNG LONG",
+    "sinhNgay": "22/11/1992",
+    "tuoi": "34",
+    "gioi": 1,
+    "ngheNghiep": "Lập trình viên",
+    "maNgheNghiep": "06",
+    "danToc": "Kinh",
+    "maDanToc": "01",
+    "ngoaiKieu": "Không",
+    "maNgoaiKieu": "",
+    "diaChi": {
+      "soNha": "Số 18 Ngõ 68",
+      "thonPho": "Phố Cầu Giấy",
+      "xaPhuong": "Phường Quan Hoa",
+      "huyenQuan": "Quận Cầu Giấy",
+      "maHuyenQuan": "05",
+      "tinhThanhPho": "Thành phố Hà Nội",
+      "maTinhThanhPho": "01"
+    },
+    "noiLamViec": "Công ty Cổ phần Công nghệ FPT",
+    "doiTuong": 1,
+    "bhytGiaTriDen": "31/12/2026",
+    "soTheBhyt": "DN4010987654321",
+    "nguoiNha": "Đỗ Thu Hà (Vợ) - Số 18 Ngõ 68 Cầu Giấy, Hà Nội",
+    "dienThoaiNguoiNha": "0987654321"
+  },
+  "quanLyNguoiBenh": {
+    "vaoVien": {
+      "gio": "21",
+      "phut": "15",
+      "ngay": "15/10/2026"
+    },
+    "trucTiepVao": 1,
+    "noiGioiThieu": 2,
+    "vaoVienLanThu": "1",
+    "vaoKhoa": {
+      "khoa": "PT Tiêu hóa",
+      "gio": "22",
+      "phut": "00",
+      "ngay": "15/10/2026",
+      "soNgayDT": "05"
+    },
+    "chuyenKhoa": [],
+    "chuyenVien": {
+      "loai": null,
+      "chuyenDen": ""
+    },
+    "raVien": {
+      "gio": "10",
+      "phut": "30",
+      "ngay": "20/10/2026",
+      "hinhThuc": 1
+    },
+    "tongSoNgayDieuTri": "05"
+  },
+  "chanDoan": {
+    "noiChuyenDen": {
+      "ten": "",
+      "ma": ""
+    },
+    "kkbCapCuu": {
+      "ten": "Viêm ruột thừa cấp",
+      "ma": "K35.8"
+    },
+    "khiVaoKhoaDieuTri": {
+      "ten": "Viêm ruột thừa cấp mủ",
+      "ma": "K35.8"
+    },
+    "thuThuat": false,
+    "phauThuat": true,
+    "taiBienBienChungNguyenNhan": null,
+    "tongSoNgaySauPhauThuat": "05",
+    "tongSoLanPhauThuat": "01",
+    "raVien": {
+      "benhChinh": "Viêm ruột thừa cấp mủ đã phẫu thuật nội soi cắt ruột thừa",
+      "maBenhChinh": "K35.8",
+      "nguyenNhan": "",
+      "maNguyenNhan": "",
+      "benhKemTheo": "Không",
+      "maBenhKemTheo": "",
+      "chanDoanTruocPhauThuat": "Viêm ruột thừa cấp",
+      "maTruocPhauThuat": "K35.8",
+      "chanDoanSauPhauThuat": "Viêm ruột thừa cấp mủ chưa vỡ",
+      "maSauPhauThuat": "K35.8",
+      "taiBien": false,
+      "bienChung": false
+    }
+  },
+  "tinhTrangRaVien": {
+    "ketQuaDieuTri": 1,
+    "giaiPhauBenh": 1,
+    "tuVong": {
+      "gio": "",
+      "phut": "",
+      "ngay": "",
+      "nguyenNhan": null,
+      "thoiGian": null,
+      "nguyenNhanChinh": "",
+      "maNguyenNhanChinh": "",
+      "khamNghiemTuThi": false,
+      "chanDoanGiaiPhauTuThi": "",
+      "maGiaiPhauTuThi": ""
+    },
+    "ngayKy": "20",
+    "thangKy": "10",
+    "namKy": "2026",
+    "giamDocBenhVien": "TS.BS. Dương Đức Hùng",
+    "truongKhoa": "PGS.TS. Phạm Hoàng Hà"
+  },
+  "benhAn": {
+    "lyDoVaoVien": "Đau bụng âm ỉ vùng hố chậu phải kèm sốt nhẹ",
+    "vaoNgayThu": "01",
+    "hoiBenh": {
+      "quaTrinhBenhLy": "Cách vào viện 10 giờ, bệnh nhân xuất hiện đau bụng vùng thượng vị và quanh rốn, sau 4 giờ khu trú xuống vùng hố chậu phải, đau âm ỉ liên tục tăng dần, kèm buồn nôn, chán ăn, sốt 38.0 độ C. Chưa dùng thuốc gì, vào cấp cứu.",
+      "tienSuBanThan": "Khỏe mạnh, chưa từng phẫu thuật vùng bụng.",
+      "dacDiemLienQuan": {
+        "diUng": {
+          "checked": false,
+          "thoiGian": ""
+        },
+        "maTuy": {
+          "checked": false,
+          "thoiGian": ""
+        },
+        "ruouBia": {
+          "checked": false,
+          "thoiGian": ""
+        },
+        "thuocLa": {
+          "checked": false,
+          "thoiGian": ""
+        },
+        "thuocLao": {
+          "checked": false,
+          "thoiGian": ""
+        },
+        "khac": {
+          "checked": false,
+          "thoiGian": ""
+        }
+      },
+      "tienSuGiaDinh": "Bình thường."
+    },
+    "khamBenh": {
+      "toanThan": "Bệnh nhân tỉnh, tiếp xúc tốt. Môi khô, lưỡi bẩn nhẹ, sốt 38.1 độ C.",
+      "sinhHieu": {
+        "mach": "92",
+        "nhietDo": "38.1",
+        "huyetAp": "120/75",
+        "nhipTho": "18",
+        "canNang": "65"
+      },
+      "benhNgoaiKhoa": "Bụng cân đối, di động theo nhịp thở, không có sẹo mổ cũ.\nẤn đau chói và có phản ứng thành bụng rõ tại điểm McBurney hố chậu phải. Dấu hiệu Blumberg (+), Rovsing (+).\nCác vùng khác của ổ bụng mềm, gan lách không sờ thấy. Thăm trực tràng: túi cùng Douglas ấn đau nhẹ phía phải.",
+      "coQuan": {
+        "tuanHoan": "Nhịp tim đều 92 lần/phút, T1 T2 rõ.",
+        "hoHap": "Rì rào phế nang hai phế trường rõ, không rales.",
+        "tieuHoa": "Như mô tả ở mục bệnh ngoại khoa.",
+        "thanTietNieuSinhDuc": "Chạm thận (-), tiểu tiện bình thường.",
+        "thanKinh": "Không có dấu hiệu thần kinh khu trú.",
+        "coXuongKhop": "Bình thường.",
+        "taiMuiHong": "Bình thường.",
+        "rangHamMat": "Bình thường.",
+        "mat": "Bình thường.",
+        "noiTietDinhDuongKhac": "Bình thường."
+      },
+      "xetNghiemCanLam": "- Công thức máu, Đông máu cơ bản, Nhóm máu ABO/Rh, Sinh hóa máu.\n- Siêu âm ổ bụng tổng quát, X-quang tim phổi, Điện tâm đồ.",
+      "tomTatBenhAn": "Bệnh nhân nam 34 tuổi vào viện vì đau hố chậu phải giờ thứ 10:\n- Hội chứng nhiễm trùng (+): Sốt 38.1 độ C, môi khô, WBC 14.5 G/L.\n- Khám bụng: Điểm McBurney đau chói, phản ứng thành bụng hố chậu phải (+).\n- Siêu âm ổ bụng: Hình ảnh ruột thừa kích thước đường kính 10mm, ấn không xẹp, thâm nhiễm mỡ xung quanh."
+    },
+    "chanDoanKhoa": {
+      "benhChinh": "Viêm ruột thừa cấp",
+      "benhKemTheo": "Không",
+      "phanBiet": "Thủng túi thừa Meckel / Sỏi niệu quản phải"
+    },
+    "tienLuong": "Tốt sau phẫu thuật nội soi cắt ruột thừa.",
+    "huongDieuTri": "Chỉ định mổ cấp cứu: Phẫu thuật nội soi cắt ruột thừa, kháng sinh dự phòng và điều trị sau mổ.",
+    "ngayLamBenhAn": "15",
+    "thangLamBenhAn": "10",
+    "namLamBenhAn": "2026",
+    "bacSyLamBenhAn": "ThS.BS. Nguyễn Quốc Bảo"
+  },
+  "tongKet": {
+    "quaTrinhBenhLyVaDienBien": "Bệnh nhân vào viện với chẩn đoán Viêm ruột thừa cấp, được chỉ định phẫu thuật nội soi cắt ruột thừa lúc 23h30 ngày 15/10/2026. Trong mổ: ruột thừa nằm ở hố chậu phải, kích thước 1x7cm viêm mủ căng to chưa vỡ, gốc ruột thừa tốt, tiến hành kẹp Hemolock cắt ruột thừa, lau rửa hố chậu phải. Hậu phẫu bệnh nhân trung tiện ngày thứ 2, ăn cháo, vết mổ khô.",
+    "tomTatKetQuaXetNghiem": "- WBC: 14.5 G/L (Neu 81.2%), Hgb 148 g/L, PLT 245 G/L.\n- Siêu âm bụng: Ruột thừa viêm mủ đk 10mm.\n- Giải phẫu bệnh: Viêm ruột thừa cấp mủ.",
+    "phuongPhapDieuTri": "Phẫu thuật nội soi cắt ruột thừa + Kháng sinh Cefoperazon/Sulbactam, giảm đau Paracetamol.",
+    "phauThuatList": [
+      {
+        "gioNgay": "23h30 - 15/10/2026",
+        "phuongPhapVoCam": "Phẫu thuật nội soi cắt ruột thừa / Mê nội khí quản",
+        "bacSyPhauThuat": "ThS.BS. Nguyễn Quốc Bảo",
+        "bacSyGayMe": "BS.CKI. Vũ Minh Quân"
+      }
+    ],
+    "tinhTrangRaVien": "Bệnh nhân tỉnh, không sốt, bụng mềm, đại tiểu tiện bình thường, 3 lỗ trocar khô sạch.",
+    "huongDieuTriTiep": "Thay băng cách ngày, cắt chỉ sau 7 ngày, vận động nhẹ nhàng, tái khám sau 1 tuần.",
+    "hoSoPhimAnh": {
+      "xQuang": "01",
+      "ctScanner": "00",
+      "sieuAm": "01",
+      "xetNghiem": "04",
+      "khacLoai": "Phiếu PT",
+      "khacSoTo": "01",
+      "toanBoHoSo": "14"
+    },
+    "nguoiGiaoHoSo": "ĐD. Hoàng Thị Thu",
+    "nguoiNhanHoSo": "CN. Nguyễn Văn Hải",
+    "ngayTongKet": "20",
+    "thangTongKet": "10",
+    "namTongKet": "2026",
+    "bacSyDieuTri": "ThS.BS. Nguyễn Quốc Bảo"
+  }
+}

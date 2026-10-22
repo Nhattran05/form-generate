@@ -1,0 +1,217 @@
+{
+  "templateId": "07_tam_than",
+  "header": {
+    "soYTe": "Sở Y tế TP. Hà Nội",
+    "benhVien": "Bệnh viện Bạch Mai",
+    "khoa": "Nội Tim Mạch",
+    "buong": "302",
+    "giuong": "12",
+    "tenBenhAn": "BỆNH ÁN TÂM THẦN",
+    "maSo": "MS: 07/BV-01",
+    "soLuuTru": "2026-004819",
+    "maYT": "010/2026/009481"
+  },
+  "hanhChinh": {
+    "hoVaTen": "NGUYỄN VĂN MINH",
+    "sinhNgay": "15/08/1968",
+    "tuoi": "58",
+    "gioi": 1,
+    "ngheNghiep": "Kỹ sư xây dựng",
+    "maNgheNghiep": "04",
+    "danToc": "Kinh",
+    "maDanToc": "01",
+    "ngoaiKieu": "Không",
+    "maNgoaiKieu": "",
+    "diaChi": {
+      "soNha": "45A",
+      "thonPho": "Phố Giải Phóng",
+      "xaPhuong": "Phường Phương Mai",
+      "huyenQuan": "Quận Đống Đa",
+      "maHuyenQuan": "06",
+      "tinhThanhPho": "Thành phố Hà Nội",
+      "maTinhThanhPho": "01"
+    },
+    "noiLamViec": "Tổng Công ty Xây dựng Sông Đà",
+    "doiTuong": 1,
+    "bhytGiaTriDen": "31/12/2026",
+    "soTheBhyt": "DN4010123456789",
+    "nguoiNha": "Nguyễn Thị Lan (Vợ) - 45A Giải Phóng, Phương Mai, Đống Đa, Hà Nội",
+    "dienThoaiNguoiNha": "0912345678"
+  },
+  "quanLyNguoiBenh": {
+    "vaoVien": {
+      "gio": "08",
+      "phut": "30",
+      "ngay": "10/10/2026"
+    },
+    "trucTiepVao": 2,
+    "noiGioiThieu": 1,
+    "vaoVienLanThu": "2",
+    "vaoKhoa": {
+      "khoa": "C1 - Tim Mạch",
+      "gio": "09",
+      "phut": "15",
+      "ngay": "10/10/2026",
+      "soNgayDT": "10"
+    },
+    "chuyenKhoa": [
+      {
+        "khoa": "",
+        "gio": "",
+        "phut": "",
+        "ngay": "",
+        "soNgayDT": ""
+      }
+    ],
+    "chuyenVien": {
+      "loai": null,
+      "chuyenDen": ""
+    },
+    "raVien": {
+      "gio": "15",
+      "phut": "00",
+      "ngay": "20/10/2026",
+      "hinhThuc": 1
+    },
+    "tongSoNgayDieuTri": "10"
+  },
+  "chanDoan": {
+    "noiChuyenDen": {
+      "ten": "Cơn đau thắt ngực không ổn định / Tăng huyết áp",
+      "ma": "I20.0"
+    },
+    "kkbCapCuu": {
+      "ten": "Theo dõi Hội chứng vành cấp / Tăng huyết áp độ 2",
+      "ma": "I24.9"
+    },
+    "khiVaoKhoaDieuTri": {
+      "ten": "Đau thắt ngực không ổn định - Tăng huyết áp độ 2 - Rối loạn lipid máu",
+      "ma": "I20.0"
+    },
+    "thuThuat": true,
+    "phauThuat": false,
+    "raVien": {
+      "benhChinh": "Đau thắt ngực không ổn định đã đặt Stent ĐMV phải (RCA)",
+      "maBenhChinh": "I20.0",
+      "benhKemTheo": "Tăng huyết áp độ 2, Rối loạn chuyển hóa lipoprotein",
+      "maBenhKemTheo": "I10",
+      "taiBien": false,
+      "bienChung": false
+    }
+  },
+  "tinhTrangRaVien": {
+    "ketQuaDieuTri": 2,
+    "giaiPhauBenh": null,
+    "tuVong": {
+      "gio": "",
+      "phut": "",
+      "ngay": "",
+      "nguyenNhan": null,
+      "thoiGian": null,
+      "nguyenNhanChinh": "",
+      "maNguyenNhanChinh": "",
+      "khamNghiemTuThi": false,
+      "chanDoanGiaiPhauTuThi": "",
+      "maGiaiPhauTuThi": ""
+    },
+    "ngayKy": "20",
+    "thangKy": "10",
+    "namKy": "2026",
+    "giamDocBenhVien": "PGS.TS. Đào Xuân Cơ",
+    "truongKhoa": "TS.BS. Nguyễn Thị Thu Hoài"
+  },
+  "benhAn": {
+    "lyDoVaoVien": "Đau ngực trái lan lên vai và tay trái",
+    "vaoNgayThu": "02",
+    "hoiBenh": {
+      "quaTrinhBenhLy": "Cách vào viện 2 ngày, bệnh nhân xuất hiện từng cơn đau ngực sau xương ức kiểu đè ép, lan lên vai trái và mặt trong cánh tay trái, mỗi cơn kéo dài khoảng 15-20 phút, kèm vã mồ hôi, khó thở nhẹ khi gắng sức. Sáng nay cơn đau tăng lên ngay cả khi nghỉ ngơi nên người nhà đưa vào viện khám và nhập viện.",
+      "tienSuBanThan": "Phát hiện Tăng huyết áp 5 năm nay, điều trị Amlodipin 5mg/ngày nhưng uống không đều. Rối loạn mỡ máu 2 năm.",
+      "dacDiemLienQuan": {
+        "diUng": {
+          "checked": false,
+          "thoiGian": ""
+        },
+        "maTuy": {
+          "checked": false,
+          "thoiGian": ""
+        },
+        "ruouBia": {
+          "checked": true,
+          "thoiGian": "60"
+        },
+        "thuocLa": {
+          "checked": true,
+          "thoiGian": "120"
+        },
+        "thuocLao": {
+          "checked": false,
+          "thoiGian": ""
+        },
+        "khac": {
+          "checked": false,
+          "thoiGian": ""
+        }
+      },
+      "tienSuGiaDinh": "Bố ruột mắc bệnh Tăng huyết áp và Tai biến mạch máu não năm 68 tuổi."
+    },
+    "khamBenh": {
+      "toanThan": "Bệnh nhân tỉnh, tiếp xúc tốt (Glasgow 15 điểm).\nDa niêm mạc hồng, không phù, không xuất huyết dưới da.\nTuyến giáp không to, hạch ngoại vi không sờ thấy.",
+      "sinhHieu": {
+        "mach": "88",
+        "nhietDo": "36.8",
+        "huyetAp": "155/95",
+        "nhipTho": "19",
+        "canNang": "68",
+        "chieuCao": "168",
+        "bmi": "24.1"
+      },
+      "coQuan": {
+        "tuanHoan": "Mỏm tim đập ở khoang liên sườn V đường trung đòn trái. Nhịp tim đều, tần số 88 chu kỳ/phút, T1 T2 rõ, không nghe thấy tiếng thổi bệnh lý.",
+        "hoHap": "Lồng ngực hai bên cân đối, di động theo nhịp thở. Rì rào phế nang êm dịu hai phế trường, không có rales.",
+        "tieuHoa": "Bụng mềm, không chướng, gan lách không sờ thấy, không có điểm đau khu trú.",
+        "thanTietNieuSinhDuc": "Chạm thận (-), bập bềnh thận (-), tiểu tiện tự chủ, nước tiểu vàng trong.",
+        "thanKinh": "Hội chứng màng não (-), không có dấu hiệu thần kinh khu trú.",
+        "coXuongKhop": "Các khớp vận động trong giới hạn bình thường, không sưng nóng đỏ đau.",
+        "taiMuiHong": "Chưa phát hiện biểu hiện bệnh lý.",
+        "rangHamMat": "Chưa phát hiện biểu hiện bệnh lý.",
+        "mat": "Hai mắt nhìn rõ, kết mạc không vàng.",
+        "noiTietDinhDuongKhac": "Chưa phát hiện bất thường."
+      },
+      "xetNghiemCanLam": "- Điện tâm đồ 12 chuyển đạo, Siêu âm Doppler tim, X-quang tim phổi thẳng.\n- Sinh hóa máu: Troponin T hs, CK-MB, Pro-BNP, Glucose, Ure, Creatinin, Bộ mỡ máu (Cholesterol, Triglycerid, HDL-C, LDL-C), Điện giải đồ.\n- Công thức máu, Đông máu cơ bản, Chụp mạch vành qua da (DSA).",
+      "tomTatBenhAn": "Bệnh nhân nam 58 tuổi, tiền sử Tăng huyết áp 5 năm, hút thuốc lá 10 năm, vào viện ngày thứ 2 của bệnh vì đau ngực trái kiểu mạch vành. Qua hỏi bệnh và thăm khám phát hiện:\n- Hội chứng vành cấp: Đau ngực sau xương ức từng cơn 15-20 phút, lan vai trái.\n- Huyết áp lúc vào 155/95 mmHg, nhịp tim 88 lần/phút.\n- Các cơ quan khác hiện chưa phát hiện dấu hiệu bệnh lý cấp tính."
+    },
+    "chanDoanKhoa": {
+      "benhChinh": "Đau thắt ngực không ổn định",
+      "benhKemTheo": "Tăng huyết áp độ 2 - Rối loạn lipid máu",
+      "phanBiet": "Nhồi máu cơ tim không ST chênh lên (NSTEMI)"
+    },
+    "tienLuong": "Dè dặt, nguy cơ hẹp nặng động mạch vành cần can thiệp đặt Stent.",
+    "huongDieuTri": "Kháng kết tập tiểu cầu kép (Aspirin + Clopidogrel), Statin liều cao, ức chế Beta, ức chế men chuyển, chụp và can thiệp động mạch vành qua da.",
+    "ngayLamBenhAn": "10",
+    "thangLamBenhAn": "10",
+    "namLamBenhAn": "2026",
+    "bacSyLamBenhAn": "ThS.BS. Lê Hoàng Nam"
+  },
+  "tongKet": {
+    "quaTrinhBenhLyVaDienBien": "Bệnh nhân vào viện với tình trạng đau thắt ngực không ổn định, huyết áp 155/95 mmHg. Sau khi làm các xét nghiệm cận lâm sàng và chụp DSA động mạch vành phát hiện hẹp 85% đoạn II động mạch vành phải (RCA). Bệnh nhân đã được can thiệp nong và đặt 01 Stent phủ thuốc tại RCA ngày 12/10/2026. Sau can thiệp bệnh nhân hết đau ngực, huyết động ổn định (HA 125/75 mmHg, mạch 70 lần/phút).",
+    "tomTatKetQuaXetNghiem": "- Điện tâm đồ: ST chênh xuống 1.5mm ở DII, DIII, aVF.\n- Troponin T hs: 18 ng/L (không động học tăng cấp); LDL-C: 4.2 mmol/L.\n- Siêu âm tim: EF 62%, giảm động nhẹ thành dưới thất trái.\n- Chụp ĐMV (DSA): Hẹp 85% RCA đoạn II, đã đặt 01 DES RCA dòng chảy TIMI 3.",
+    "phuongPhapDieuTri": "Can thiệp đặt 01 Stent phủ thuốc động mạch vành phải (RCA) kết hợp điều trị nội khoa: Dual Antiplatelet (Aspirin 81mg + Brilinta 90mg x 2v), Rosuvastatin 20mg, Bisoprolol 2.5mg, Perindopril 5mg.",
+    "tinhTrangRaVien": "Bệnh nhân tỉnh táo, hết hoàn toàn triệu chứng đau ngực, khó thở. Mạch 68 lần/phút, HA 120/75 mmHg, vị trí chọc mạch quay phải khô, lành tốt.",
+    "huongDieuTriTiep": "- Uống thuốc đều hàng ngày theo đơn ngoại trú tuyệt đối không tự ý ngưng thuốc kháng kết tập tiểu cầu.\n- Kiêng thuốc lá, rượu bia, hạn chế mỡ động vật, ăn nhạt.\n- Tái khám sau 1 tháng tại Phòng khám Tim mạch hoặc khám lại ngay nếu đau ngực tái phát.",
+    "hoSoPhimAnh": {
+      "xQuang": "01",
+      "ctScanner": "00",
+      "sieuAm": "02",
+      "xetNghiem": "06",
+      "khacLoai": "Đĩa CD DSA",
+      "khacSoTo": "01",
+      "toanBoHoSo": "18"
+    },
+    "nguoiGiaoHoSo": "ĐD. Trần Thị Mai",
+    "nguoiNhanHoSo": "CN. Phạm Văn Hùng",
+    "ngayTongKet": "20",
+    "thangTongKet": "10",
+    "namTongKet": "2026",
+    "bacSyDieuTri": "ThS.BS. Lê Hoàng Nam"
+  }
+}

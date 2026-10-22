@@ -1,0 +1,208 @@
+{
+  "templateId": "28_phcn_nhi",
+  "header": {
+    "soYTe": "Sở Y tế TP. Hồ Chí Minh",
+    "benhVien": "Bệnh viện Nhi Đồng 1",
+    "khoa": "Hô Hấp",
+    "buong": "104",
+    "giuong": "08",
+    "tenBenhAn": "BỆNH ÁN PHỤC HỒI CHỨC NĂNG NHI",
+    "maSo": "MS: 28/BV1",
+    "soLuuTru": "2026-NHI-1192",
+    "maYT": "790/2026/018234"
+  },
+  "hanhChinh": {
+    "hoVaTen": "TRẦN GIA BẢO",
+    "sinhNgay": "12/03/2024",
+    "tuoi": "31",
+    "donViTuoi": "Tháng",
+    "gioi": 1,
+    "danToc": "Kinh",
+    "maDanToc": "01",
+    "ngoaiKieu": "Không",
+    "maNgoaiKieu": "",
+    "diaChi": {
+      "soNha": "128/4",
+      "thonPho": "Đường Lý Thường Kiệt",
+      "xaPhuong": "Phường 14",
+      "huyenQuan": "Quận 10",
+      "maHuyenQuan": "10",
+      "tinhThanhPho": "TP. Hồ Chí Minh",
+      "maTinhThanhPho": "79"
+    },
+    "hoTenBo": "Trần Quốc Tuấn",
+    "trinhDoVHBo": "12/12",
+    "ngheNghiepBo": "Nhân viên văn phòng",
+    "hoTenMe": "Lê Ngọc Ánh",
+    "trinhDoVHMe": "Đại học",
+    "ngheNghiepMe": "Giáo viên",
+    "doiTuong": 1,
+    "bhytGiaTriDen": "12/03/2030",
+    "soTheBhyt": "TE1797912345678",
+    "nguoiNha": "Lê Ngọc Ánh (Mẹ) - 128/4 Lý Thường Kiệt, P14, Q10, TP.HCM",
+    "dienThoaiNguoiNha": "0908112233"
+  },
+  "quanLyNguoiBenh": {
+    "vaoVien": {
+      "gio": "10",
+      "phut": "20",
+      "ngay": "14/10/2026"
+    },
+    "trucTiepVao": 1,
+    "noiGioiThieu": 2,
+    "vaoVienLanThu": "1",
+    "vaoKhoa": {
+      "khoa": "Hô hấp",
+      "gio": "11",
+      "phut": "00",
+      "ngay": "14/10/2026",
+      "soNgayDT": "06"
+    },
+    "chuyenKhoa": [],
+    "chuyenVien": {
+      "loai": null,
+      "chuyenDen": ""
+    },
+    "raVien": {
+      "gio": "14",
+      "phut": "00",
+      "ngay": "20/10/2026",
+      "hinhThuc": 1
+    },
+    "tongSoNgayDieuTri": "06"
+  },
+  "chanDoan": {
+    "noiChuyenDen": {
+      "ten": "",
+      "ma": ""
+    },
+    "kkbCapCuu": {
+      "ten": "Viêm phế quản phổi cấp",
+      "ma": "J18.0"
+    },
+    "khiVaoKhoaDieuTri": {
+      "ten": "Viêm phế quản phổi nặng / Theo dõi nhiễm RSV",
+      "ma": "J18.0"
+    },
+    "thuThuat": true,
+    "phauThuat": false,
+    "raVien": {
+      "benhChinh": "Viêm phế quản phổi cấp đã ổn định",
+      "maBenhChinh": "J18.0",
+      "benhKemTheo": "Viêm mũi họng cấp",
+      "maBenhKemTheo": "J00",
+      "taiBien": false,
+      "bienChung": false
+    }
+  },
+  "tinhTrangRaVien": {
+    "ketQuaDieuTri": 1,
+    "giaiPhauBenh": null,
+    "tuVong": {
+      "gio": "",
+      "phut": "",
+      "ngay": "",
+      "nguyenNhan": null,
+      "thoiGian": null,
+      "nguyenNhanChinh": "",
+      "maNguyenNhanChinh": "",
+      "khamNghiemTuThi": false,
+      "chanDoanGiaiPhauTuThi": "",
+      "maGiaiPhauTuThi": ""
+    },
+    "ngayKy": "20",
+    "thangKy": "10",
+    "namKy": "2026",
+    "giamDocBenhVien": "PGS.TS. Nguyễn Thanh Hùng",
+    "truongKhoa": "BS.CKII. Trần Anh Tuấn"
+  },
+  "benhAn": {
+    "lyDoVaoVien": "Sốt cao, ho đờm nhiều và thở nhanh",
+    "vaoNgayThu": "03",
+    "hoiBenh": {
+      "quaTrinhBenhLy": "Trẻ bệnh 3 ngày nay: khởi đầu sốt 38.5 - 39 độ C, chảy nước mũi trong sau đục dần, ho khan chuyển sang ho có đờm. Ngày nay trẻ sốt cao 39.2 độ C, thở nhanh, rút lõm lồng ngực nhẹ, bú ăn kém nên gia đình đưa trẻ vào viện.",
+      "tienSuBanThan": "Trẻ khỏe mạnh, từng bị viêm tiểu phế quản lúc 14 tháng tuổi điều trị ngoại trú.",
+      "tienSuGiaDinh": "Gia đình không ai mắc bệnh hen phế quản hay lao phổi.",
+      "quaTrinhSinhTruong": {
+        "conThuMay": "1",
+        "para": "1001",
+        "tinhTrangKhiSinh": 1,
+        "canNangLucSinh": "3.2",
+        "diTatBamSinh": false,
+        "cuTheTatBamSinh": "Không",
+        "phatTrienTinhThan": "Bình thường theo lứa tuổi (biết nói câu ngắn, nhận biết tốt)",
+        "phatTrienVanDong": "Bình thường (chạy vững, tự lên xuống cầu thang)",
+        "cacBenhLyKhac": "Không",
+        "nuoiDuong": 1,
+        "caiSuaThangThu": "18",
+        "chamSoc": 1,
+        "daTiemChung": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "tiemChungKhac": "Phế cầu, Cúm mùa, Rota virus"
+      }
+    },
+    "khamBenh": {
+      "chieuCao": "92",
+      "vongNguc": "51",
+      "vongDau": "49",
+      "toanThan": "Trẻ tỉnh, đừ nhẹ, môi hồng với khí trời (SpO2 96%).\nKhông co giật, không dấu xuất huyết dưới da.",
+      "sinhHieu": {
+        "mach": "128",
+        "nhietDo": "38.8",
+        "huyetAp": "95/60",
+        "nhipTho": "46",
+        "canNang": "13.5"
+      },
+      "coQuan": {
+        "tuanHoan": "Tim đều rõ, tần số 128 lần/phút, chi ấm, mạch quay rõ.",
+        "hoHap": "Thở nhanh 46 lần/phút, rút lõm lồng ngực nhẹ. Nghe phổi có rales ẩm nhỏ hạt và rales ngáy rải rác 2 bên đáy phổi.",
+        "tieuHoa": "Bụng mềm, gan lách không to, không tiêu chảy.",
+        "thanTietNieuSinhDuc": "Tiểu bình thường, nước tiểu vàng trong.",
+        "thanKinh": "Thóp đã kín, cổ mềm, không dấu thần kinh khu trú.",
+        "coXuongKhop": "Vận động bình thường.",
+        "taiMuiHongRangHamMatMatDinhDuong": "Họng đỏ xung huyết, xuất tiết dịch mũi nhầy trắng. Màng nhĩ 2 bên sáng."
+      },
+      "xetNghiemCanLam": "- Tổng phân tích tế bào máu ngoại vi, CRP định lượng.\n- X-quang tim phổi thẳng.\n- Test nhanh RSV / Cúm A-B dịch tỵ hầu.",
+      "tomTatBenhAn": "Bệnh nhi nam 31 tháng tuổi, vào viện ngày thứ 3 vì sốt cao, ho đờm, thở nhanh. Khám ghi nhận:\n- Hội chứng nhiễm trùng: Sốt 38.8 độ C, môi khô.\n- Triệu chứng hô hấp: Thở nhanh 46 lần/phút, rút lõm ngực nhẹ, phổi có rales ẩm nhỏ hạt 2 bên."
+    },
+    "chanDoanKhoa": {
+      "benhChinh": "Viêm phế quản phổi cấp mức độ trung bình - nặng",
+      "benhKemTheo": "Viêm mũi họng cấp",
+      "phanBiet": "Viêm tiểu phế quản cấp bội nhiễm"
+    },
+    "tienLuong": "Khá, đáp ứng với kháng sinh và khí dung.",
+    "huongDieuTri": "Kháng sinh Ceftriaxon đường tĩnh mạch, hạ sốt Paracetamol, khí dung Natri Clorid 0.9%, bù dịch và dinh dưỡng.",
+    "ngayLamBenhAn": "14",
+    "thangLamBenhAn": "10",
+    "namLamBenhAn": "2026",
+    "bacSyLamBenhAn": "BS.CKI. Nguyễn Hoàng Yến"
+  },
+  "tongKet": {
+    "quaTrinhBenhLyVaDienBien": "Sau 6 ngày điều trị kháng sinh và hỗ trợ hô hấp, trẻ cắt sốt từ ngày thứ 3 sau nhập viện, giảm ho, hết thở nhanh (nhịp thở 28 lần/phút), phổi thông khí đều hai bên, ăn uống khá.",
+    "tomTatKetQuaXetNghiem": "- Công thức máu: WBC 15.8 G/L (Neu 72%), Hgb 122 g/L, PLT 310 G/L; CRP: 42 mg/L.\n- X-quang phổi: Mờ thâm nhiễm rải rác cạnh rốn phổi và đáy phổi phải.",
+    "phuongPhapDieuTri": "Kháng sinh Ceftriaxon 75mg/kg/ngày x 5 ngày, Hạ sốt, Vật lý trị liệu hô hấp - thông thoáng đường thở.",
+    "tinhTrangRaVien": "Trẻ tỉnh táo, chơi ngoan, hết sốt 3 ngày, ăn ngủ tốt, phổi hết rales.",
+    "huongDieuTriTiep": "Vệ sinh mũi họng hàng ngày bằng nước muối sinh lý, giữ ấm, dinh dưỡng đầy đủ, tái khám sau 5 ngày.",
+    "hoSoPhimAnh": {
+      "xQuang": "01",
+      "ctScanner": "00",
+      "sieuAm": "00",
+      "xetNghiem": "03",
+      "khacLoai": "",
+      "khacSoTo": "",
+      "toanBoHoSo": "10"
+    },
+    "nguoiGiaoHoSo": "ĐD. Lê Thị Bích",
+    "nguoiNhanHoSo": "CN. Võ Văn Kiệt",
+    "ngayTongKet": "20",
+    "thangTongKet": "10",
+    "namTongKet": "2026",
+    "bacSyDieuTri": "BS.CKI. Nguyễn Hoàng Yến"
+  }
+}

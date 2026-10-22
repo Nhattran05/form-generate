@@ -1,0 +1,108 @@
+{
+  "templateId": "17_tuyen_xa",
+  "header": {
+    "soYTe": "Sở Y tế TP. Đà Nẵng",
+    "benhVien": "Bệnh viện Đà Nẵng",
+    "khoa": "Khám bệnh - Nội tiết",
+    "buong": "P.102",
+    "giuong": "",
+    "tenBenhAn": "BỆNH ÁN (Dùng cho tuyến xã, phường)",
+    "maSo": "MS: 17/BV-01",
+    "soNgoaiTru": "NT-2026-0912",
+    "soLuuTru": "2026-NT-0912",
+    "maYT": "480/2026/009120"
+  },
+  "hanhChinh": {
+    "hoVaTen": "LÊ THỊ BÍCH NGỌC",
+    "sinhNgay": "05/04/1975",
+    "tuoi": "51",
+    "gioi": 2,
+    "ngheNghiep": "Kế toán",
+    "maNgheNghiep": "05",
+    "danToc": "Kinh",
+    "maDanToc": "01",
+    "ngoaiKieu": "Không",
+    "maNgoaiKieu": "",
+    "diaChi": {
+      "soNha": "92",
+      "thonPho": "Đường Nguyễn Văn Linh",
+      "xaPhuong": "Phường Nam Dương",
+      "huyenQuan": "Quận Hải Châu",
+      "maHuyenQuan": "01",
+      "tinhThanhPho": "TP. Đà Nẵng",
+      "maTinhThanhPho": "48"
+    },
+    "noiLamViec": "Công ty Thương mại Miền Trung",
+    "doiTuong": 1,
+    "bhytGiaTriDen": "31/12/2026",
+    "soTheBhyt": "DN4484800112233",
+    "nguoiNha": "Phan Văn Tùng (Chồng) - 92 Nguyễn Văn Linh, Hải Châu, Đà Nẵng",
+    "dienThoaiNguoiNha": "0905123456",
+    "denKhamLuc": {
+      "gio": "08",
+      "phut": "00",
+      "ngay": "01/10/2026"
+    },
+    "chanDoanNoiGioiThieu": "Đái tháo đường type 2 - Tăng huyết áp",
+    "noiGioiThieu": 2
+  },
+  "benhAn": {
+    "lyDoVaoVien": "Khát nước nhiều, tiểu nhiều, sụt 2kg trong 1 tháng kèm mệt mỏi",
+    "hoiBenh": {
+      "quaTrinhBenhLy": "Bệnh nhân phát hiện Đái tháo đường type 2 cách đây 3 năm, đang điều trị ngoại trú nhưng gần đây tự ý giảm liều thuốc. Khoảng 1 tháng nay thấy khát nước nhiều, tiểu đêm 3-4 lần, người mệt mỏi, sụt 2kg, tê bì nhẹ hai bàn chân nên đến khám.",
+      "tienSuBanThan": "Đái tháo đường type 2 (3 năm), Tăng huyết áp (2 năm), không dị ứng thuốc.",
+      "tienSuGiaDinh": "Mẹ đẻ mắc Đái tháo đường type 2."
+    },
+    "khamBenh": {
+      "toanThan": "Bệnh nhân tỉnh, tiếp xúc tốt, thể trạng trung bình, da niêm mạc hồng, tuyến giáp không to.",
+      "sinhHieu": {
+        "mach": "78",
+        "nhietDo": "36.7",
+        "huyetAp": "135/85",
+        "nhipTho": "18",
+        "canNang": "56"
+      },
+      "cacBoPhan": "Tim nhịp đều 78 lần/phút. Phổi thông khí rõ, không rales. Bụng mềm, gan lách không sờ thấy. Khám bàn chân: Mạch mu chân 2 bên bắt rõ, giảm nhẹ cảm giác nông đầu ngón chân.",
+      "tomTatKetQuaCanLamSang": "Glucose máu lúc đói: 11.4 mmol/L; HbA1c: 8.6%; Creatinin: 76 umol/L; eGFR: 82 ml/phút; Cholesterol TP: 5.8 mmol/L; Tổng phân tích nước tiểu: Glucose (++), Protein (-).",
+      "chanDoanBanDau": "Đái tháo đường type 2 chưa kiểm soát tốt đường huyết / Tăng huyết áp / Rối loạn lipid máu",
+      "daXuLy": "- Điều chỉnh phác đồ: Metformin XR 1000mg x 1 viên tối, Empagliflozin 10mg x 1 viên sáng, Telmisartan 40mg x 1 viên sáng, Atorvastatin 10mg x 1 viên tối.\n- Tư vấn chế độ dinh dưỡng tiết chế tinh bột, tập thể dục 30 phút/ngày.",
+      "chanDoanKhiRaVien": "Đái tháo đường không phụ thuộc insuline (Type 2) kèm biến chứng thần kinh ngoại biên nhẹ",
+      "maChanDoanRaVien": "E11.4",
+      "dieuTriNgoaiTruTuNgay": "01/10/2026",
+      "dieuTriNgoaiTruDenNgay": "30/10/2026"
+    },
+    "ngayLamBenhAn": "01",
+    "thangLamBenhAn": "10",
+    "namLamBenhAn": "2026",
+    "giamDocBenhVien": "TS.BS. Lê Đức Nhân",
+    "bacSyKhamBenh": "BS.CKII. Nguyễn Thị Minh Tâm"
+  },
+  "tongKet": {
+    "quaTrinhBenhLyVaDienBien": "Sau đợt điều trị ngoại trú 20 ngày với phác đồ phối hợp Metformin + SGLT2i và kiểm soát huyết áp, bệnh nhân giảm hẳn triệu chứng khát nước và tiểu đêm, đường huyết mao mạch buổi sáng đạt 6.4 - 7.1 mmol/L, huyết áp ổn định 125/80 mmHg.",
+    "tomTatKetQuaXetNghiem": "- Glucose máu tái khám: 6.8 mmol/L; HbA1c: 7.4%.\n- Chức năng gan thận trong giới hạn bình thường.",
+    "chanDoanRaVien": {
+      "benhChinh": "Đái tháo đường type 2 đã kiểm soát ổn định",
+      "maBenhChinh": "E11.9",
+      "benhKemTheo": "Tăng huyết áp vô căn - Rối loạn chuyển hóa lipid",
+      "maBenhKemTheo": "I10"
+    },
+    "phuongPhapDieuTri": "Điều trị nội khoa ngoại trú theo phác đồ thuốc viên hạ đường huyết, hạ áp và statin.",
+    "tinhTrangRaVien": "Bệnh nhân khỏe, đường huyết và huyết áp đạt mục tiêu điều trị.",
+    "huongDieuTriTiep": "Tiếp tục duy trì đơn thuốc ngoại trú, tái khám định kỳ mỗi tháng 1 lần.",
+    "hoSoPhimAnh": {
+      "xQuang": "01",
+      "ctScanner": "00",
+      "sieuAm": "01",
+      "xetNghiem": "04",
+      "khacLoai": "Điện tim",
+      "khacSoTo": "01",
+      "toanBoHoSo": "09"
+    },
+    "nguoiGiaoHoSo": "ĐD. Võ Thị Hạnh",
+    "nguoiNhanHoSo": "CN. Đặng Quốc Huy",
+    "ngayTongKet": "20",
+    "thangTongKet": "10",
+    "namTongKet": "2026",
+    "bacSyDieuTri": "BS.CKII. Nguyễn Thị Minh Tâm"
+  }
+}

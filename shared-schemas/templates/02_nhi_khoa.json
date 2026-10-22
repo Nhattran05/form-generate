@@ -14,15 +14,49 @@
     "hasGrowthHistory": true,
     "hasSurgicalBlock": false,
     "hasTraditionalMedicine": false,
-    "vitalsFields": ["mach", "nhietDo", "huyetAp", "nhipTho", "canNang"],
+    "vitalsFields": [
+      "mach",
+      "nhietDo",
+      "huyetAp",
+      "nhipTho",
+      "canNang"
+    ],
     "organFields": [
-      { "key": "tuanHoan", "label": "+ Tuần hoàn", "lines": 3 },
-      { "key": "hoHap", "label": "+ Hô hấp", "lines": 3 },
-      { "key": "tieuHoa", "label": "+ Tiêu hoá", "lines": 3 },
-      { "key": "thanTietNieuSinhDuc", "label": "+ Thận - Tiết niệu - Sinh dục", "lines": 3 },
-      { "key": "thanKinh", "label": "+ Thần kinh", "lines": 3 },
-      { "key": "coXuongKhop", "label": "+ Cơ - Xương - Khớp", "lines": 3 },
-      { "key": "taiMuiHongRangHamMatMatDinhDuong", "label": "+ Tai - Mũi - Họng, Răng - Hàm - Mặt, Mắt, Dinh dưỡng và các bệnh lý khác", "lines": 4 }
+      {
+        "key": "tuanHoan",
+        "label": "+ Tuần hoàn",
+        "lines": 3
+      },
+      {
+        "key": "hoHap",
+        "label": "+ Hô hấp",
+        "lines": 3
+      },
+      {
+        "key": "tieuHoa",
+        "label": "+ Tiêu hoá",
+        "lines": 3
+      },
+      {
+        "key": "thanTietNieuSinhDuc",
+        "label": "+ Thận - Tiết niệu - Sinh dục",
+        "lines": 3
+      },
+      {
+        "key": "thanKinh",
+        "label": "+ Thần kinh",
+        "lines": 3
+      },
+      {
+        "key": "coXuongKhop",
+        "label": "+ Cơ - Xương - Khớp",
+        "lines": 3
+      },
+      {
+        "key": "taiMuiHongRangHamMatMatDinhDuong",
+        "label": "+ Tai - Mũi - Họng, Răng - Hàm - Mặt, Mắt, Dinh dưỡng và các bệnh lý khác",
+        "lines": 4
+      }
     ],
     "summaryVariant": "internal"
   }

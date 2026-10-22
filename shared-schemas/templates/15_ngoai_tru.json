@@ -14,7 +14,13 @@
     "hasGrowthHistory": false,
     "hasSurgicalBlock": false,
     "hasTraditionalMedicine": false,
-    "vitalsFields": ["mach", "nhietDo", "huyetAp", "nhipTho", "canNang"],
+    "vitalsFields": [
+      "mach",
+      "nhietDo",
+      "huyetAp",
+      "nhipTho",
+      "canNang"
+    ],
     "organFields": [],
     "summaryVariant": "outpatient"
   }

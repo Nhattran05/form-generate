@@ -51,12 +51,22 @@ Tất cả các mẫu bệnh án được lắp ghép từ bộ Component dùng 
 
 ## 3. Hướng Dẫn Cài Đặt & Chạy Ứng Dụng
 
-### Bước 1: Chạy Backend FastAPI (Port `8000`)
+### ⭐ Cách Chạy Nhanh Nhất (1 Click):
+Nhấp đúp vào file [`run.bat`](file:///D:/Form%20Generating/run.bat) tại thư mục gốc, hoặc chạy từ Terminal:
+```cmd
+run.bat
+```
+Script sẽ tự động khởi động Backend (port 8000), Frontend (port 5173) trong 2 cửa sổ riêng và mở trình duyệt web `http://localhost:5173`.
+
+---
+
+### Khởi Chạy Thủ Công Từng Phần:
+
+#### Bước 1: Chạy Backend FastAPI (Port `8000`)
 ```powershell
 cd "D:\Form Generating\backend"
-python -m venv .venv
-.\.venv\Scripts\pip install -r requirements.txt
-.\.venv\Scripts\uvicorn app.main:app --reload --port 8000
+.\.venv\Scripts\Activate.ps1
+uvicorn app.main:app --reload --port 8000
 ```
 - Tài liệu Swagger API tự động tại: `http://127.0.0.1:8000/docs`
 
@@ -67,3 +77,15 @@ npm install
 npm run dev
 ```
 - Mở trình duyệt tại: `http://localhost:5173`
+
+---
+
+## 4. Tích Hợp REST API Xuất PDF (Dành Cho HIS / EMR / Hệ Thống Bên Ngoài)
+
+Hệ thống cung cấp sẵn các REST API endpoint chuẩn `application/pdf` để các phần mềm bệnh viện (HIS/EMR) gửi JSON và nhận trực tiếp file PDF in ấn chuẩn Thông tư 32:
+
+- **Tự động nhận diện mẫu & tự động xóa file tạm**: `POST /api/v1/pdf` (hoặc `POST /api/v1/pdf/{template_id}`)
+- **Hỗ trợ 29 mẫu bệnh án**: `01/BV1` đến `29/BV1` (Nội, Nhi, Sản, Ngoại, Bỏng, Mắt, TMH, RHM, YHCT, PHCN...).
+- **Cơ chế Server-side Temp Cleanup**: File PDF sau khi biên dịch và truyền thành công về Client sẽ được tự động xóa ngay lập tức qua FastAPI `BackgroundTasks`, không làm đầy ổ đĩa server.
+- **Tài liệu hướng dẫn chi tiết & Code mẫu (cURL, Python, Node.js)**: Xem chi tiết tại [API_GUIDE.md](file:///D:/Form%20Generating/API_GUIDE.md).
+

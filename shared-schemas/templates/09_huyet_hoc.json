@@ -1,0 +1,78 @@
+{
+  "id": "09_huyet_hoc",
+  "code": "09/BV1",
+  "officialCode": "MS: 09/BV-01",
+  "title": "BỆNH ÁN HUYẾT HỌC - TRUYỀN MÁU",
+  "layoutGroup": "internal_standard",
+  "config": {
+    "headerVariant": "standard",
+    "adminVariant": "adult",
+    "managementVariant": "inpatient",
+    "diagnosisVariant": "internal",
+    "dischargeVariant": "standard",
+    "hasRelatedCharacteristicsTable": true,
+    "hasGrowthHistory": false,
+    "hasSurgicalBlock": false,
+    "hasTraditionalMedicine": false,
+    "vitalsFields": [
+      "mach",
+      "nhietDo",
+      "huyetAp",
+      "nhipTho",
+      "canNang"
+    ],
+    "organFields": [
+      {
+        "key": "tuanHoan",
+        "label": "+ Tuần hoàn",
+        "lines": 4
+      },
+      {
+        "key": "hoHap",
+        "label": "+ Hô hấp",
+        "lines": 4
+      },
+      {
+        "key": "tieuHoa",
+        "label": "+ Tiêu hoá",
+        "lines": 4
+      },
+      {
+        "key": "thanTietNieuSinhDuc",
+        "label": "+ Thận - Tiết niệu - Sinh dục",
+        "lines": 4
+      },
+      {
+        "key": "thanKinh",
+        "label": "+ Thần kinh",
+        "lines": 4
+      },
+      {
+        "key": "coXuongKhop",
+        "label": "+ Cơ - Xương - Khớp",
+        "lines": 3
+      },
+      {
+        "key": "taiMuiHong",
+        "label": "+ Tai - Mũi - Họng",
+        "lines": 2
+      },
+      {
+        "key": "rangHamMat",
+        "label": "+ Răng - Hàm - Mặt",
+        "lines": 2
+      },
+      {
+        "key": "mat",
+        "label": "+ Mắt",
+        "lines": 1
+      },
+      {
+        "key": "noiTietDinhDuongKhac",
+        "label": "+ Nội tiết, dinh dưỡng và các bệnh lý khác",
+        "lines": 3
+      }
+    ],
+    "summaryVariant": "internal"
+  }
+}

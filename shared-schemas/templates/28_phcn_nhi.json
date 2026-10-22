@@ -1,0 +1,63 @@
+{
+  "id": "28_phcn_nhi",
+  "code": "28/BV1",
+  "officialCode": "MS: 28/BV1",
+  "title": "BỆNH ÁN PHỤC HỒI CHỨC NĂNG NHI",
+  "layoutGroup": "pediatric_standard",
+  "config": {
+    "headerVariant": "standard",
+    "adminVariant": "pediatric",
+    "managementVariant": "inpatient",
+    "diagnosisVariant": "internal",
+    "dischargeVariant": "standard",
+    "hasRelatedCharacteristicsTable": false,
+    "hasGrowthHistory": true,
+    "hasSurgicalBlock": false,
+    "hasTraditionalMedicine": false,
+    "vitalsFields": [
+      "mach",
+      "nhietDo",
+      "huyetAp",
+      "nhipTho",
+      "canNang"
+    ],
+    "organFields": [
+      {
+        "key": "tuanHoan",
+        "label": "+ Tuần hoàn",
+        "lines": 3
+      },
+      {
+        "key": "hoHap",
+        "label": "+ Hô hấp",
+        "lines": 3
+      },
+      {
+        "key": "tieuHoa",
+        "label": "+ Tiêu hoá",
+        "lines": 3
+      },
+      {
+        "key": "thanTietNieuSinhDuc",
+        "label": "+ Thận - Tiết niệu - Sinh dục",
+        "lines": 3
+      },
+      {
+        "key": "thanKinh",
+        "label": "+ Thần kinh",
+        "lines": 3
+      },
+      {
+        "key": "coXuongKhop",
+        "label": "+ Cơ - Xương - Khớp",
+        "lines": 3
+      },
+      {
+        "key": "taiMuiHongRangHamMatMatDinhDuong",
+        "label": "+ Tai - Mũi - Họng, Răng - Hàm - Mặt, Mắt, Dinh dưỡng và các bệnh lý khác",
+        "lines": 4
+      }
+    ],
+    "summaryVariant": "internal"
+  }
+}

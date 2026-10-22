@@ -1,0 +1,27 @@
+{
+  "id": "16_ngoai_tru_rhm",
+  "code": "16/BV1",
+  "officialCode": "MS: 16/BV-01",
+  "title": "BỆNH ÁN NGOẠI TRÚ CHUYÊN KHOA RĂNG HÀM MẶT",
+  "layoutGroup": "outpatient_standard",
+  "config": {
+    "headerVariant": "outpatient",
+    "adminVariant": "outpatient",
+    "managementVariant": "none",
+    "diagnosisVariant": "none",
+    "dischargeVariant": "none",
+    "hasRelatedCharacteristicsTable": false,
+    "hasGrowthHistory": false,
+    "hasSurgicalBlock": false,
+    "hasTraditionalMedicine": false,
+    "vitalsFields": [
+      "mach",
+      "nhietDo",
+      "huyetAp",
+      "nhipTho",
+      "canNang"
+    ],
+    "organFields": [],
+    "summaryVariant": "outpatient"
+  }
+}

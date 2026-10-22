@@ -1,0 +1,27 @@
+{
+  "id": "17_tuyen_xa",
+  "code": "17/BV1",
+  "officialCode": "MS: 17/BV-01",
+  "title": "BỆNH ÁN (Dùng cho tuyến xã, phường)",
+  "layoutGroup": "outpatient_standard",
+  "config": {
+    "headerVariant": "outpatient",
+    "adminVariant": "outpatient",
+    "managementVariant": "none",
+    "diagnosisVariant": "none",
+    "dischargeVariant": "none",
+    "hasRelatedCharacteristicsTable": false,
+    "hasGrowthHistory": false,
+    "hasSurgicalBlock": false,
+    "hasTraditionalMedicine": false,
+    "vitalsFields": [
+      "mach",
+      "nhietDo",
+      "huyetAp",
+      "nhipTho",
+      "canNang"
+    ],
+    "organFields": [],
+    "summaryVariant": "outpatient"
+  }
+}

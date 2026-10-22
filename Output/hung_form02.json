@@ -1,0 +1,89 @@
+{
+  "templateId": "02_nhi_khoa",
+  "header": {
+    "soYTe": "Sở Y tế Hà Nội",
+    "benhVien": "Bệnh viện Nhi Trung ương",
+    "khoa": "Khoa Hô hấp",
+    "buong": "205",
+    "giuong": "12",
+    "tenBenhAn": "BỆNH ÁN NHI KHOA",
+    "maSo": "MS: 02/BV-01",
+    "soLuuTru": "2026-NHI-0918",
+    "maYT": "010/2026/05432"
+  },
+  "hanhChinh": {
+    "hoVaTen": "NGUYỄN MẠNH HÙNG",
+    "sinhNgay": "10/05/2023",
+    "tuoi": "3",
+    "donViTuoi": "Tuổi",
+    "gioi": 1,
+    "danToc": "Kinh",
+    "maDanToc": "01",
+    "diaChi": {
+      "soNha": "24",
+      "thonPho": "Phố Kim Mã",
+      "xaPhuong": "Phường Kim Mã",
+      "huyenQuan": "Quận Ba Đình",
+      "tinhThanhPho": "Hà Nội"
+    },
+    "hoTenBo": "Nguyễn Văn Tuấn",
+    "hoTenMe": "Trần Thị Mai",
+    "soTheBhyt": "TE1010198765432",
+    "nguoiNha": "Nguyễn Văn Tuấn (Bố)",
+    "dienThoaiNguoiNha": "0988123456"
+  },
+  "quanLyNguoiBenh": {
+    "vaoVien": {
+      "gio": "09",
+      "phut": "15",
+      "ngay": "18/10/2026"
+    },
+    "trucTiepVao": 1,
+    "vaoKhoa": {
+      "khoa": "Hô hấp",
+      "gio": "10",
+      "phut": "00",
+      "ngay": "18/10/2026",
+      "soNgayDT": "04"
+    },
+    "tongSoNgayDT": "4"
+  },
+  "chanDoan": {
+    "noiChuyenDen": "Theo dõi Viêm phế quản phổi",
+    "khamBenh": "Viêm phế quản phổi cấp",
+    "maKhamBenh": "J18.0",
+    "vaoKhoa": {
+      "benhChinh": "Viêm phế quản phổi cấp",
+      "maBenhChinh": "J18.0"
+    },
+    "raVien": {
+      "benhChinh": "Viêm phế quản phổi",
+      "maBenhChinh": "J18.0"
+    }
+  },
+  "tinhTrangRaVien": {
+    "ketQuaDieuTri": 2,
+    "ngayRaVien": "22/10/2026"
+  },
+  "hoiBenh": {
+    "lyDoVaoVien": "Sốt cao ngày thứ 3, ho đờm nhiều, thở khò khè, bú kém",
+    "benhSu": "Bệnh khởi phát cách nhập viện 3 ngày với sốt nhẹ, hắt hơi, sổ mũi. Ngày thứ 2 sốt cao 39 độ C, ho tăng dần kèm tiếng thở rít khò khè. Trẻ ăn uống kém, gia đình cho nhập viện điều trị."
+  },
+  "khamBenh": {
+    "toanThan": "Trẻ tỉnh, tiếp xúc được, da niêm mạc hồng, không tím tái, không co giật.",
+    "mach": "115",
+    "nhietDo": "38.2",
+    "huyetAp": "95/60",
+    "nhipTho": "34",
+    "canNang": "14",
+    "tuanHoan": "T1, T2 rõ, nhịp tim đều, không có tiếng thổi bệnh lý.",
+    "hoHap": "Lồng ngực cân đối, co kéo cơ liên sườn nhẹ, thông khí 2 phổi rõ, có ít rales ẩm rải rác 2 phế trường.",
+    "tieuHoa": "Bụng mềm, gan lách không to."
+  },
+  "tongKet": {
+    "quaTrinhBenhLy": "Bệnh nhi được điều trị khí dung giãn phế quản, kháng sinh Augmentin và hạ sốt Paracetamol. Sau 4 ngày trẻ cắt sốt, hết khò khè, phổi thông khí tốt, ăn uống bình thường.",
+    "huongDieuTri": "Cho ra viện, tiếp tục dùng siro ho thảo dược, tái khám sau 5 ngày hoặc khi sốt lại.",
+    "bacSiDieuTri": "BS. Phạm Thu Trang",
+    "giamDoc": "TS.BS. Nguyễn Thanh Liêm"
+  }
+}

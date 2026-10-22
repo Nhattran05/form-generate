@@ -1,0 +1,80 @@
+{
+  "id": "19_yhct_ngoai_tru",
+  "code": "19/BV1",
+  "officialCode": "MS: 19/BV-01",
+  "title": "BỆNH ÁN NGOẠI TRÚ Y HỌC CỔ TRUYỀN",
+  "layoutGroup": "traditional_medicine",
+  "config": {
+    "headerVariant": "yhct",
+    "adminVariant": "yhct",
+    "managementVariant": "inpatient",
+    "diagnosisVariant": "yhct_dual",
+    "dischargeVariant": "standard",
+    "hasRelatedCharacteristicsTable": false,
+    "hasGrowthHistory": false,
+    "hasSurgicalBlock": false,
+    "hasTraditionalMedicine": true,
+    "vitalsFields": [
+      "mach",
+      "nhietDo",
+      "huyetAp",
+      "nhipTho",
+      "canNang",
+      "chieuCao",
+      "bmi"
+    ],
+    "organFields": [
+      {
+        "key": "tuanHoan",
+        "label": "Tuần hoàn",
+        "lines": 2
+      },
+      {
+        "key": "hoHap",
+        "label": "Hô hấp",
+        "lines": 2
+      },
+      {
+        "key": "tieuHoa",
+        "label": "Tiêu hóa",
+        "lines": 2
+      },
+      {
+        "key": "thanTietNieuSinhDuc",
+        "label": "Tiết niệu - sinh dục",
+        "lines": 2
+      },
+      {
+        "key": "thanKinh",
+        "label": "Thần kinh",
+        "lines": 2
+      },
+      {
+        "key": "coXuongKhop",
+        "label": "Cơ xương khớp",
+        "lines": 2
+      },
+      {
+        "key": "taiMuiHong",
+        "label": "Tai - Mũi - Họng",
+        "lines": 2
+      },
+      {
+        "key": "rangHamMat",
+        "label": "Răng - Hàm - Mặt",
+        "lines": 2
+      },
+      {
+        "key": "mat",
+        "label": "Mắt",
+        "lines": 2
+      },
+      {
+        "key": "noiTietDinhDuongKhac",
+        "label": "Nội tiết, dinh dưỡng và các bệnh lý khác (nếu có)",
+        "lines": 2
+      }
+    ],
+    "summaryVariant": "yhct"
+  }
+}

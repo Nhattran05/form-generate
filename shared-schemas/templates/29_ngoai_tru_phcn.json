@@ -1,0 +1,27 @@
+{
+  "id": "29_ngoai_tru_phcn",
+  "code": "29/BV1",
+  "officialCode": "MS: 29/BV1",
+  "title": "BỆNH ÁN NGOẠI TRÚ PHỤC HỒI CHỨC NĂNG",
+  "layoutGroup": "outpatient_standard",
+  "config": {
+    "headerVariant": "outpatient",
+    "adminVariant": "outpatient",
+    "managementVariant": "none",
+    "diagnosisVariant": "none",
+    "dischargeVariant": "none",
+    "hasRelatedCharacteristicsTable": false,
+    "hasGrowthHistory": false,
+    "hasSurgicalBlock": false,
+    "hasTraditionalMedicine": false,
+    "vitalsFields": [
+      "mach",
+      "nhietDo",
+      "huyetAp",
+      "nhipTho",
+      "canNang"
+    ],
+    "organFields": [],
+    "summaryVariant": "outpatient"
+  }
+}

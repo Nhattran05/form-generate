@@ -6,6 +6,8 @@ import uuid
 from pathlib import Path
 from typing import Optional
 
+from app.core.config import IMAGES_DIR
+
 
 def _find_latex_compiler() -> Optional[str]:
     """
@@ -55,6 +57,8 @@ def render_latex_to_temp_pdf_file(tex_source: str, filename_prefix: str = "med_f
 
     # Tạo thư mục làm việc tạm thời cho quá trình biên dịch
     work_dir = Path(tempfile.mkdtemp(prefix="latex_build_"))
+    if IMAGES_DIR.exists():
+        shutil.copytree(IMAGES_DIR, work_dir / "images", dirs_exist_ok=True)
     unique_id = uuid.uuid4().hex[:8]
     tex_file = work_dir / f"{filename_prefix}_{unique_id}.tex"
     pdf_file = work_dir / f"{filename_prefix}_{unique_id}.pdf"

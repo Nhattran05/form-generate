@@ -349,6 +349,18 @@
       "schemaFile": "templates/29_ngoai_tru_phcn.json",
       "sampleFile": "samples/29_ngoai_tru_phcn.sample.json",
       "description": "Mẫu bệnh án Ngoại trú Phục hồi chức năng."
+    },
+    {
+      "id": "30_benh_an_dau",
+      "code": "30/BV1",
+      "officialCode": "VM - BS - V1 - 012",
+      "title": "BỆNH ÁN ĐAU TOÀN DIỆN",
+      "category": "Chuyên Khoa Điều Trị Đau (Pain Clinic)",
+      "layoutGroup": "pain_record_19p",
+      "featured": true,
+      "schemaFile": "templates/30_benh_an_dau.json",
+      "sampleFile": "samples/30_benh_an_dau.sample.json",
+      "description": "Mẫu Bệnh án Đau Toàn Diện (Comprehensive Pain Record - 19 trang song ngữ Việt/Anh, bao gồm thang đo VAS, DN4, Budapest, Beck BDI và 5 sơ đồ cảm giác cơ thể)."
     }
   ]
 }

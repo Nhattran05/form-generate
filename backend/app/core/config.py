@@ -6,5 +6,6 @@ SHARED_SCHEMAS_DIR = PROJECT_ROOT / "shared-schemas"
 REGISTRY_PATH = SHARED_SCHEMAS_DIR / "registry.json"
 TEMPLATES_DIR = SHARED_SCHEMAS_DIR / "templates"
 SAMPLES_DIR = SHARED_SCHEMAS_DIR / "samples"
+IMAGES_DIR = PROJECT_ROOT / "images"
 OUTPUT_DIR = BASE_DIR / "generated_outputs"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)

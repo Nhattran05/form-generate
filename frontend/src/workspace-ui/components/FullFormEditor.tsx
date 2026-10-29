@@ -13,6 +13,7 @@ import {
   MedicalRecordJsonData,
   MedicalTemplateSchema,
 } from '@medical-forms/types/form.types';
+import { safeText } from '@medical-forms/sections/PainRecordSection';
 
 interface FullFormEditorProps {
   data: MedicalRecordJsonData;
@@ -73,6 +74,7 @@ export const FullFormEditor: React.FC<FullFormEditorProps> = ({
   const [searchTerm, setSearchTerm] = useState<string>('');
 
   const { config } = schema;
+  const isPainRecord = config.headerVariant === 'pain_record' || schema.id === '30_benh_an_dau';
   const isOutpatient = config.headerVariant === 'outpatient';
   const isPediatric = config.adminVariant === 'pediatric';
   const isSurgical = config.diagnosisVariant === 'surgical' || config.hasSurgicalBlock;
@@ -80,6 +82,263 @@ export const FullFormEditor: React.FC<FullFormEditorProps> = ({
 
   const header = data.header || {};
   const hc = data.hanhChinh || {};
+
+  if (isPainRecord) {
+    const tsb = data.tienSuBenh || {};
+    const bsd = data.benhSuDau || {};
+    const vas = data.doCuongDoDauVas || {};
+    const dtvsd = data.dienTienVaSoDo || {};
+    const dn4 = data.cauHoiDn4 || {};
+    const bud = data.tieuChuanBudapest || {};
+    const beck = data.thangTramCamBeck || {};
+    const kcg = data.khamCamGiacBacSy || {};
+    const qsvdt = data.quanSatVaDieuTri || {};
+    const thkq = data.tongHopKetQua || {};
+    const dtxl = data.dieuTriXamLan || {};
+    const cddh = data.chanDoanDinhHuong || {};
+
+    const patchBranch = (branchKey: string, patch: Record<string, any>) =>
+      onUpdateData((prev) => ({
+        ...prev,
+        [branchKey]: { ...(prev[branchKey] || {}), ...patch },
+      }));
+
+    return (
+      <div className="flex flex-col h-full overflow-y-auto p-3 space-y-4 bg-slate-50">
+        <div className="bg-white border border-slate-200 rounded-lg p-3 space-y-2.5 shadow-sm">
+          <div className="text-xs font-bold text-teal-800 uppercase border-b pb-1.5">
+            Trang 1: Hành chính & Thông tin người bệnh (VM - BS - V1 - 012)
+          </div>
+          <div className="grid grid-cols-2 gap-2.5">
+            <FieldInput
+              label="Họ và tên người bệnh"
+              value={safeText(hc.hoVaTen || header.nguoiBenh)}
+              onChange={(v) => {
+                patchBranch('hanhChinh', { hoVaTen: v });
+                patchBranch('header', { nguoiBenh: v });
+              }}
+            />
+            <FieldInput
+              label="Mã người bệnh (PID)"
+              value={safeText(header.maNguoiBenh || header.pid)}
+              onChange={(v) => patchBranch('header', { maNguoiBenh: v })}
+              mono
+            />
+            <FieldInput
+              label="Bác sỹ điều trị đau"
+              value={safeText(header.bacSyDieuTriDau)}
+              onChange={(v) => patchBranch('header', { bacSyDieuTriDau: v })}
+            />
+            <FieldInput
+              label="Điều dưỡng"
+              value={safeText(header.dieuDuong)}
+              onChange={(v) => patchBranch('header', { dieuDuong: v })}
+            />
+            <FieldInput
+              label="Ngày khám đầu"
+              value={safeText(header.ngayKhamDau)}
+              onChange={(v) => patchBranch('header', { ngayKhamDau: v })}
+            />
+            <FieldInput
+              label="Ngày sinh (DD/MM/YYYY)"
+              value={safeText(hc.sinhNgay)}
+              onChange={(v) => patchBranch('hanhChinh', { sinhNgay: v })}
+            />
+            <FieldInput
+              label="Tuổi"
+              value={safeText(hc.tuoi)}
+              onChange={(v) => patchBranch('hanhChinh', { tuoi: v })}
+            />
+            <FieldInput
+              label="Di động / Điện thoại"
+              value={safeText(hc.diDong || hc.dienThoai)}
+              onChange={(v) => patchBranch('hanhChinh', { diDong: v })}
+            />
+            <FieldInput
+              label="Nghề nghiệp"
+              value={safeText(hc.ngheNghiep)}
+              onChange={(v) => patchBranch('hanhChinh', { ngheNghiep: v })}
+            />
+            <FieldInput
+              label="Tình trạng hôn nhân"
+              value={safeText(hc.tinhTrangHonNhan)}
+              onChange={(v) => patchBranch('hanhChinh', { tinhTrangHonNhan: v })}
+            />
+          </div>
+          <FieldInput
+            label="Hội chứng chính (Main syndrome)"
+            value={safeText(header.hoiChungChinh)}
+            onChange={(v) => patchBranch('header', { hoiChungChinh: v })}
+          />
+          <FieldInput
+            label="Địa chỉ hiện tại"
+            value={safeText(hc.diaChi)}
+            onChange={(v) => patchBranch('hanhChinh', { diaChi: v })}
+          />
+        </div>
+
+        <div className="bg-white border border-slate-200 rounded-lg p-3 space-y-2.5 shadow-sm">
+          <div className="text-xs font-bold text-teal-800 uppercase border-b pb-1.5">
+            Trang 2 - 4: Tiền sử bệnh & Bệnh sử đau
+          </div>
+          <FieldTextarea
+            label="Tiền sử dị ứng (Trang 2)"
+            rows={2}
+            value={safeText(tsb.diUng)}
+            onChange={(v) => patchBranch('tienSuBenh', { diUng: v })}
+          />
+          <FieldTextarea
+            label="Can thiệp phẫu thuật đã từng làm (Trang 2)"
+            rows={2}
+            value={safeText(tsb.phauThuatDaLam)}
+            onChange={(v) => patchBranch('tienSuBenh', { phauThuatDaLam: v })}
+          />
+          <FieldTextarea
+            label="Các bệnh lý đang điều trị & Thuốc đang dùng (Trang 2)"
+            rows={2}
+            value={safeText(tsb.tenThuocVaLieuDung)}
+            onChange={(v) => patchBranch('tienSuBenh', { tenThuocVaLieuDung: v })}
+          />
+          <FieldTextarea
+            label="Xét nghiệm cận lâm sàng (MRI, CT, máu...) & kết quả (Trang 2)"
+            rows={2}
+            value={safeText(tsb.xetNghiemCanLamSang)}
+            onChange={(v) => patchBranch('tienSuBenh', { xetNghiemCanLamSang: v })}
+          />
+          <div className="grid grid-cols-2 gap-2.5">
+            <FieldInput
+              label="Vị trí đau ban đầu (Trang 3)"
+              value={safeText(bsd.viTriBanDau)}
+              onChange={(v) => patchBranch('benhSuDau', { viTriBanDau: v })}
+            />
+            <FieldInput
+              label="Vị trí lan tỏa (Trang 3)"
+              value={safeText(bsd.viTriLanToa)}
+              onChange={(v) => patchBranch('benhSuDau', { viTriLanToa: v })}
+            />
+          </div>
+          <FieldTextarea
+            label="Sự tiến triển của cơn đau (Trang 3)"
+            rows={2}
+            value={safeText(bsd.suTienTrien)}
+            onChange={(v) => patchBranch('benhSuDau', { suTienTrien: v })}
+          />
+        </div>
+
+        <div className="bg-white border border-slate-200 rounded-lg p-3 space-y-2.5 shadow-sm">
+          <div className="text-xs font-bold text-teal-800 uppercase border-b pb-1.5">
+            Trang 5 - 11: Thang VAS, Sơ đồ đau, DN4, Budapest & Thang Beck (BDI)
+          </div>
+          <div className="grid grid-cols-3 gap-2">
+            <FieldInput
+              label="VAS Hiện tại (0-10)"
+              value={safeText(vas.dauHienTai)}
+              onChange={(v) => patchBranch('doCuongDoDauVas', { dauHienTai: Number(v) || 0 })}
+            />
+            <FieldInput
+              label="VAS Cao nhất 4 tuần"
+              value={safeText(vas.dauNhat4Tuan)}
+              onChange={(v) => patchBranch('doCuongDoDauVas', { dauNhat4Tuan: Number(v) || 0 })}
+            />
+            <FieldInput
+              label="VAS TB 4 tuần"
+              value={safeText(vas.trungBinh4Tuan)}
+              onChange={(v) => patchBranch('doCuongDoDauVas', { trungBinh4Tuan: Number(v) || 0 })}
+            />
+          </div>
+          <div className="grid grid-cols-2 gap-2.5">
+            <FieldInput
+              label="Điểm Score Diễn tiến đau (Trang 7)"
+              value={safeText(dtvsd.diemScore)}
+              onChange={(v) => patchBranch('dienTienVaSoDo', { diemScore: v })}
+            />
+            <FieldInput
+              label="Tổng điểm DN4 (/10 - Trang 8)"
+              value={safeText(dn4.tongDiem)}
+              onChange={(v) => patchBranch('cauHoiDn4', { tongDiem: v })}
+            />
+            <FieldInput
+              label="Kết luận Budapest (YES/NO - Trang 9)"
+              value={safeText(bud.ketLuanBudapest)}
+              onChange={(v) => patchBranch('tieuChuanBudapest', { ketLuanBudapest: v })}
+            />
+            <FieldInput
+              label="Tổng điểm BDI Beck (Trang 11)"
+              value={safeText(beck.tongDiemBdi)}
+              onChange={(v) => patchBranch('thangTramCamBeck', { tongDiemBdi: v })}
+            />
+          </div>
+        </div>
+
+        <div className="bg-white border border-slate-200 rounded-lg p-3 space-y-2.5 shadow-sm">
+          <div className="text-xs font-bold text-teal-800 uppercase border-b pb-1.5">
+            Trang 12 - 19: Khám Cảm giác Bác sỹ, Quan sát, Tổng hợp & Can thiệp xâm lấn
+          </div>
+          <div className="grid grid-cols-2 gap-2.5">
+            <FieldInput
+              label="Bác sỹ khám cảm giác (Trang 12)"
+              value={safeText(kcg.bacSyDieuTri)}
+              onChange={(v) => patchBranch('khamCamGiacBacSy', { bacSyDieuTri: v })}
+            />
+            <FieldInput
+              label="Giờ khám (Trang 12)"
+              value={safeText(kcg.gioKham)}
+              onChange={(v) => patchBranch('khamCamGiacBacSy', { gioKham: v })}
+            />
+          </div>
+          <FieldTextarea
+            label="Thông tin quan sát lâm sàng (Observation - Trang 15)"
+            rows={3}
+            value={safeText(qsvdt.thongTinQuanSat)}
+            onChange={(v) => patchBranch('quanSatVaDieuTri', { thongTinQuanSat: v })}
+          />
+          <FieldTextarea
+            label="Chẩn đoán mức độ tổn thương (Trang 16)"
+            rows={2}
+            value={safeText(thkq.chanDoanMucDoTonThuong)}
+            onChange={(v) => patchBranch('tongHopKetQua', { chanDoanMucDoTonThuong: v })}
+          />
+          <FieldTextarea
+            label="Chẩn đoán căn nguyên (Trang 16)"
+            rows={2}
+            value={safeText(thkq.chanDoanCanNguyen)}
+            onChange={(v) => patchBranch('tongHopKetQua', { chanDoanCanNguyen: v })}
+          />
+          <FieldInput
+            label="Loại thủ thuật xâm lấn (Trang 17)"
+            value={safeText(dtxl.loaiThuThuat)}
+            onChange={(v) => patchBranch('dieuTriXamLan', { loaiThuThuat: v })}
+          />
+          <div className="grid grid-cols-2 gap-2.5">
+            <FieldInput
+              label="Mã ICD-10 (Trang 17)"
+              value={safeText(dtxl.maIcd10)}
+              onChange={(v) => patchBranch('dieuTriXamLan', { maIcd10: v })}
+              mono
+            />
+            <FieldInput
+              label="Mã CPT (Trang 17)"
+              value={safeText(dtxl.maCpt)}
+              onChange={(v) => patchBranch('dieuTriXamLan', { maCpt: v })}
+              mono
+            />
+          </div>
+          <FieldTextarea
+            label="Báo cáo thủ thuật (Trang 17)"
+            rows={3}
+            value={safeText(dtxl.baoCaoThuThuat)}
+            onChange={(v) => patchBranch('dieuTriXamLan', { baoCaoThuThuat: v })}
+          />
+          <FieldTextarea
+            label="Đề xuất kế hoạch điều trị (Strategy proposed - Trang 18)"
+            rows={2}
+            value={safeText(cddh.deXuatKeHoach)}
+            onChange={(v) => patchBranch('chanDoanDinhHuong', { deXuatKeHoach: v })}
+          />
+        </div>
+      </div>
+    );
+  }
   const diaChi = hc.diaChi || {};
   const denKham = hc.denKhamLuc || {};
   const ql = data.quanLyNguoiBenh || {};

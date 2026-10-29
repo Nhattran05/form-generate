@@ -1,229 +1,99 @@
-# BỘ NHỚ HỆ THỐNG & HƯỚNG DẪN LẬP TRÌNH (.gemini - Incremental Summary)
-
-> **Mục đích tài liệu**: Đây là file bộ nhớ trung tâm (System Memory) của dự án `Form Generating`. Tài liệu này tổng hợp toàn bộ kiến trúc, nguyên lý thiết kế, bản đồ mã nguồn, quy chuẩn lập trình và trạng thái hệ thống tích lũy. Khi bắt đầu bất kỳ phiên làm việc nào, AI và Developer cần đọc tài liệu này để nắm bắt trọn vẹn ngữ cảnh và phát triển code chính xác theo tiêu chuẩn.
-
----
-
-## 1. TỔNG QUAN KIẾN TRÚC HỆ THỐNG (SYSTEM OVERVIEW)
-
-- **Mục tiêu**: Hệ thống Fullstack tiếp nhận dữ liệu bệnh án dạng **JSON**, hiển thị trực quan khổ **A4 chuẩn Bộ Y tế** theo **Thông tư 32/2023/TT-BYT (Phụ lục XXVIII)** bao gồm toàn bộ **29 mẫu bệnh án** (`01/BV1` đến `29/BV1`), và xuất sang **PDF** hoặc mã nguồn **LaTeX (`.tex`)**.
-- **Mô hình kiến trúc cốt lõi (Dual-Engine Architecture)**:
-  1. **Engine 1 - Client Web Studio (React + Vite + TailwindCSS)**:
-     - Giao diện Split-View 2 cột: Cột trái hỗ trợ 4 chế độ nhập liệu (Dán trực tiếp JSON Raw, Form Nhập Đầy Đủ 100% trường `FullFormEditor`, Form Nhập Nhanh, và Xem Schema Component).
-     - Cột phải: Live Preview khổ giấy A4 chuẩn bản in, hỗ trợ chế độ ## 2. Quản Lý Bộ Nhớ Hệ Thống `.gemini` (Incremental Summary)
-
-### Nguyên tắc cốt lõi
-1. **Không bao giờ append theo ngày / theo session**. Chỉ cập nhật **in-place** vào các mục cố định.
-2. **Mục tiêu duy trì**: 1.500 – 3.500 tokens (khoảng 1.200 – 2.800 từ tiếng Việt + code).
-3. **Ưu tiên thông tin có giá trị lâu dài** hơn thông tin tạm thời.
-4. Mỗi lần update phải **xóa hoặc gộp** phần đã lỗi thời.
-
-### Cấu trúc bắt buộc (giữ đúng thứ tự)
-
-1. **System Architecture Overview** (mục đích + tech stack + luồng chính + engine cốt lõi)
-2. **Codebase Map & Directory Conventions** (vai trò từng thư mục/file quan trọng)
-3. **Coding Guidelines & Technical Standards** (defensive coding, pattern 0-code, convention, error handling…)
-4. **Incremental System State** (chỉ những gì **đã hoàn thành 100%** – feature, endpoint, schema, migration…)
-5. **Memory Maintenance Protocol** (quy định update)
-6. **Context Budget** (ghi rõ giới hạn token hiện tại + mục tiêu)
-
-### Quy tắc cập nhật cụ thể
-
-- **Chỉ ghi những gì đã ổn định**. Feature đang làm dở → không đưa vào mục 4.
-- Khi refactor lớn → rewrite lại mục 1 + 2, xóa phần cũ.
-- Endpoint/schema mới xong → thêm vào mục 4, đồng thời kiểm tra xem có cần cập nhật mục 1 hoặc 2 không.
-- Xóa ngay các mục đã deprecate hoặc đã thay thế hoàn toàn.
-- Không viết “ngày X làm Y”. Thay bằng trạng thái hiện tại.
-- Giữ ngôn ngữ súc tích, ưu tiên bullet + code reference ngắn.
-
-### Checklist trước khi commit/update `.gemini`
-
-- [ ] File < 3.500 tokens?
-- [ ] Không còn thông tin outdated?
-- [ ] Mục 4 chỉ chứa thứ đã 100%?
-- [ ] AI đọc file này có đủ context để code tiếp mà không cần hỏi lại kiến trúc không?
-
-### Template gợi ý (rút gọn)
-
-```markdown
-# .gemini – System Memory
+# .gemini — System Memory & Developer Guide
 
 ## 1. System Architecture Overview
-- Mục đích: ...
-- Stack: ...
-- Core flow: ...
-- Engine chính: ...
-
-## 2. Codebase Map
-- `/src/...` → ...
-- File trung tâm: ...
-
-## 3. Coding Guidelines
-- Defensive: ...
-- Pattern thêm feature: ...
-- Convention: ...
-
-## 4. Incremental System State (Completed 100%)
-- Feature A: ...
-- Endpoint /api/...: ...
-- Schema: ...
-
-## 5. Memory Maintenance Protocol
-- Chỉ update in-place.
-- Giữ ≤ 3.500 tokens.
-- Xóa phần lỗi thời ngay khi thay đổi.
-
-## 6. Context Budget
-Current: ~XXXX tokens | Target: 1.500–3.500sửa trực tiếp (Inline Click-to-Edit) đồng bộ 2 chiều tức thì với JSON và Form bên trái.
-     - Hỗ trợ in ấn chuẩn bản in (`@media print` và CSS Print rules).
-  2. **Engine 2 - Server Renderer (FastAPI + XeLaTeX / PdfLaTeX)**:
-     - Chuyển đổi JSON thành mã nguồn LaTeX (`.tex`) thông qua `latex_builder.py`.
-     - Biên dịch trực tiếp `.tex` sang `.pdf` bằng `xelatex` (font Times New Roman hệ thống, hỗ trợ tiếng Việt UTF-8 chuẩn xác, fallback sang `pdflatex`).
-     - **Hoàn toàn độc lập với Browser (Headless)**: Không cần cài đặt Puppeteer, Playwright hay Edge/Chrome trên server.
-     - **Cơ chế Server-side Temp Cleanup**: Toàn bộ file PDF sinh ra trong `%TEMP%` được tự động xóa sạch ngay sau khi truyền về client qua `FastAPI BackgroundTasks`.
-- **Triết lý Thiết kế Khả Chuyển (Portable Modules)**:
-  - Tách bạch 100% logic y tế với giao diện ứng dụng.
-  - Bộ thư viện `frontend/src/medical-forms/` và `backend/app/services/` là các module độc lập, có thể copy nguyên vẹn sang bất kỳ dự án React hoặc Python nào khác mà không bị phụ thuộc code ngoài.
+- **Mục đích**: Hệ thống Fullstack chuyển đổi dữ liệu bệnh án dạng **JSON** sang **PDF chuẩn A4** và mã nguồn **LaTeX (`.tex`)** cho **29 mẫu bệnh án Thông tư 32/2023/TT-BYT (Phụ lục XXVIII)** (`01/BV1` $\rightarrow$ `29/BV1`) và **Mẫu số 30: Bệnh Án Đau Toàn Diện (`30_benh_an_dau` / `VM - BS - V1 - 012`)** gồm 19 trang song ngữ Việt - Anh có nhúng sơ đồ giải phẫu.
+- **Tech Stack**:
+  - **Frontend**: React 18, TypeScript, Vite, TailwindCSS, Lucide Icons (Port `5173`).
+  - **Backend**: Python 3.11+, FastAPI, Pydantic, Uvicorn, XeLaTeX / PdfLaTeX (Port `8000`).
+- **Luồng xử lý chính (Core Flow)**:
+  - **Web Studio**: Người dùng chọn mẫu $\rightarrow$ Nhập liệu qua Form hoặc dán JSON $\rightarrow$ Live Preview khổ A4 thời gian thực $\rightarrow$ Xuất PDF/LaTeX qua Backend API hoặc in trực tiếp từ trình duyệt.
+  - **REST API (HIS/EMR Integration)**: Client gửi `POST /api/v1/pdf` (hoặc `/api/v1/pdf/{template_id}`) kèm JSON payload $\rightarrow$ `latex_builder.py` sinh mã `.tex` $\rightarrow$ `pdf_renderer.py` đồng bộ thư mục `images/` vào thư mục tạm và gọi `xelatex` biên dịch ra PDF $\rightarrow$ Trả về `FileResponse` và tự động xóa file tạm qua `BackgroundTasks`.
+- **Engine cốt lõi (Dual-Engine & Portable Modules)**:
+  - `frontend/src/medical-forms/`: Module React độc lập dựng trang in A4.
+  - `backend/app/services/`: Module Python độc lập chuyển đổi JSON $\rightarrow$ LaTeX $\rightarrow$ PDF (không phụ thuộc trình duyệt headless).
 
 ---
 
-## 2. BẢN ĐỒ CẤU TRÚC MÃ NGUỒN (CODEBASE MAP)
-
+## 2. Codebase Map & Directory Conventions
 ```text
 D:\Form Generating\
-├── .gemini                                # [BỘ NHỚ] Tài liệu tóm tắt kiến trúc & hướng dẫn code
-├── run.bat                                # Launcher 1-click khởi chạy đồng thời Backend + Frontend
-├── API_GUIDE.md                           # Tài liệu đặc tả REST API & code mẫu cURL/Python/JS
-├── README.md                              # Hướng dẫn tổng quát dự án
-│
-├── shared-schemas/                        # 📦 [PORTABLE] Schemas & Dữ liệu mẫu dùng chung
-│   ├── registry.json                      # Danh mục khai báo toàn bộ 29 mẫu bệnh án
-│   ├── templates/                         # File JSON cấu hình các section cho từng mẫu (01 -> 29)
-│   └── samples/                           # File JSON dữ liệu mẫu điền sẵn chuẩn Bộ Y tế (01 -> 29)
-│
-├── backend/                               # 🚀 FastAPI Backend Server (Port 8000)
-│   ├── .venv/                             # Python Virtual Environment (Lưu ý: có dấu chấm đầu)
-│   ├── requirements.txt                   # FastAPI, Uvicorn, Pydantic, Watchfiles...
-│   ├── generate_all_schemas.py            # Script sinh tự động 29 template & sample
-│   ├── test_api_endpoints.py              # Bộ test tự động kiểm thử REST API
+├── .gemini                                # Bộ nhớ hệ thống & Hướng dẫn lập trình (Incremental Summary)
+├── run.bat                                # Launcher 1-click khởi chạy Backend (8000) + Frontend (5173)
+├── API_GUIDE.md                           # Đặc tả REST API, tra cứu mẫu & ví dụ tích hợp
+├── 30_benh_an_dau.json                    # Dữ liệu JSON mẫu chuẩn mới của Bệnh Án Đau (19 trang)
+├── images/                                # Thư mục chứa 9 ảnh thực tế trích xuất từ medical_form_full.pdf
+│   ├── logo.jpg                           # Trang 1: Logo Bệnh viện Đa khoa Quốc tế Vinmec (xref=5)
+│   ├── pain_course_1.png -> pain_course_4.png # Trang 7: 4 biểu đồ kiểu diễn tiến cơn đau (xref=36..39)
+│   ├── body_map_clean.png                 # Trang 7: Sơ đồ vị trí đau trên cơ thể thực tế (xref=42)
+│   ├── full_body_sensory_anterior_posterior.png # Trang 12: Sơ đồ cảm giác toàn thân Trước & Sau (xref=58)
+│   ├── full_body_sensory_lateral.png      # Trang 13: Sơ đồ cảm giác toàn thân Tư thế nghiêng (xref=62)
+│   └── physician_focal_clean.png          # Trang 14: Sơ đồ khám cảm giác cục bộ (Mặt, Tay, Đáy chậu - xref=66)
+├── shared-schemas/                        # [PORTABLE] Cấu hình Schema & JSON mẫu dùng chung
+│   ├── registry.json                      # Danh mục 30 mẫu bệnh án (01/BV1 -> 30/BV1)
+│   ├── templates/                         # Schema cấu hình cho từng mẫu (01_noi_khoa.json -> 30_benh_an_dau.json)
+│   └── samples/                           # Dữ liệu JSON mẫu điền sẵn (01 -> 30)
+├── backend/                               # FastAPI Server
+│   ├── .venv/                             # Virtual Environment (lưu ý có dấu chấm ở đầu)
 │   └── app/
-│       ├── main.py                        # FastAPI entrypoint, middleware CORS, health check
-│       ├── api/
-│       │   └── routes_form.py             # REST Endpoints: /templates, /pdf, /pdf/{id}, /latex
-│       ├── core/
-│       │   └── config.py                  # Đường dẫn tuyệt đối tới shared-schemas và templates
-│       ├── schemas/
-│       │   └── form_payload.py            # Pydantic Schemas xác thực dữ liệu đầu vào
-│       └── services/                      # 📦 [PORTABLE CORE PYTHON]
-│           ├── latex_builder.py           # Bộ biên dịch JSON -> Mã nguồn LaTeX (.tex) chuẩn Bộ Y tế
-│           ├── pdf_renderer.py            # Trình gọi XeLaTeX biên dịch PDF & dọn file tạm
-│           └── html_builder.py            # Kết xuất HTML A4 độc lập dự phòng
-│
-└── frontend/                              # 💻 React + Vite + TypeScript + TailwindCSS (Port 5173)
-    ├── package.json                       # Scripts: dev (vite --port 5173), build, preview
-    ├── vite.config.ts                     # Cấu hình Vite & plugin React
+│       ├── main.py                        # FastAPI app, CORS, StaticFiles mount '/images'
+│       ├── core/config.py                 # Quản lý đường dẫn SHARED_SCHEMAS_DIR, IMAGES_DIR
+│       ├── api/routes_form.py             # Endpoints: /templates, /pdf, /pdf/{id}, /render/latex
+│       └── services/
+│           ├── latex_builder.py           # Biên dịch JSON -> LaTeX (.tex) cho chuẩn TT32 & Bệnh án Đau 19 trang
+│           ├── pdf_renderer.py            # Gọi xelatex trong temp dir (kèm copy images/) & dọn rác tự động
+│           └── html_builder.py            # Kết xuất HTML A4 độc lập
+└── frontend/                              # React + Vite Split-View Studio
     └── src/
-        ├── medical-forms/                 # ⭐ [PORTABLE CORE REACT] Tái sử dụng cho mọi dự án
-        │   ├── index.ts                   # Barrel export toàn bộ Primitives, Sections, Renderer
-        │   ├── types/form.types.ts        # TypeScript interfaces cho 100% trường bệnh án
-        │   ├── styles/
-        │   │   └── a4-medical-print.css   # CSS chuẩn in ấn A4, dòng kẻ chấm, ô số, khung sinh hiệu
-        │   ├── primitives/                # Thành phần nguyên tử:
-        │   │   ├── A4Page.tsx             # Khung giấy chuẩn A4 (210mm x 297mm)
-        │   │   ├── DottedField.tsx        # Dòng chấm tự động lấp đầy + text đặt trên dòng chấm
-        │   │   ├── DottedTextarea.tsx     # Đoạn văn bản nhiều dòng chấm song song
-        │   │   ├── CharBoxes.tsx          # Cụm ô vuông ký tự/mã số (Ngày sinh, Tuổi, ICD-10, BHYT)
-        │   │   ├── OptionCheck.tsx        # Ô checkbox đánh dấu [X] / [✓]
-        │   │   ├── VitalsBox.tsx          # Khung sinh hiệu đặt bên phải mục Khám toàn thân
-        │   │   ├── SurgeryTable.tsx       # Bảng phẫu thuật / thủ thuật
-        │   │   ├── RelatedCharacteristicsTable.tsx # Bảng 6 đặc điểm liên quan bệnh
-        │   │   └── SignatureBlock.tsx     # Khối chữ ký Giám đốc, Trưởng khoa, Bác sỹ
-        │   ├── sections/                  # Khối chức năng ghép trang:
-        │   │   ├── HeaderSection.tsx      # Quốc hiệu, Sở Y tế, Bệnh viện, Tiêu đề, Mã số
-        │   │   ├── AdminSection.tsx       # I. Hành chính (Người lớn / Nhi khoa / YHCT)
-        │   │   ├── PatientManagementSection.tsx # II. Quản lý người bệnh & Bảng chuyển khoa
-        │   │   ├── DiagnosisSection.tsx   # III. Chẩn đoán (Nội / Ngoại / Song song YHHĐ-YHCT)
-        │   │   ├── DischargeStatusSection.tsx # IV. Tình trạng ra viện & Kết quả điều trị
-        │   │   ├── ClinicalRecordSection.tsx # Phần Bệnh án (Hỏi bệnh, Tiền sử, Khám cơ quan)
-        │   │   └── SummarySection.tsx     # Tổng kết bệnh án & Bàn giao hồ sơ phim ảnh
-        │   └── renderer/
-        │       └── MedicalFormRenderer.tsx# Nhận (Schema + JSON) -> Dựng giao diện chuẩn mẫu
-        └── workspace-ui/                  # Giao diện Studio bao bọc
-            ├── components/
-            │   ├── TopNavbar.tsx          # Thanh công cụ trên (chọn mẫu, đổi theme, xuất file)
-            │   ├── JsonEditorPanel.tsx    # Panel trái: 4 Tab soạn thảo & dán JSON
-            │   ├── FullFormEditor.tsx     # Form nhập liệu tay 100% trường phân chia theo chuyên mục
-            │   └── PdfPreviewPanel.tsx    # Panel phải: Khung cuộn trang A4 preview
-            └── hooks/
-                └── useFormStorage.ts      # Lưu trữ tạm trạng thái form vào LocalStorage
+        ├── medical-forms/                 # [PORTABLE CORE]
+        │   ├── types/form.types.ts        # Interfaces cấu hình Schema & JSON payload
+        │   ├── primitives/MedicalPrimitives.tsx # A4Page, DottedField, CharBoxes, VitalsBox...
+        │   ├── sections/                  # Header, Admin, Diagnosis, ClinicalRecord, Summary, PainRecordSection
+        │   ├── renderer/MedicalFormRenderer.tsx # Điều hướng render theo headerVariant ('standard'|'outpatient'|'pain_record')
+        │   └── registry/index.ts          # Nạp cấu hình và dữ liệu mẫu
+        └── workspace-ui/                  # Giao diện Studio (TopNavbar, JsonEditorPanel, FullFormEditor, PdfPreviewPanel)
 ```
 
 ---
 
-## 3. NGUYÊN TẮC LẬP TRÌNH & TIÊU CHUẨN KỸ THUẬT (CODING GUIDELINES)
-
-### 3.1. Nguyên tắc Phòng Thủ Khi Dựng Form (Defensive Rendering)
-- **Không bao giờ giả định JSON có đủ trường**: Client, bệnh viện hoặc người dùng có thể gửi dữ liệu rút gọn (chỉ có tên bệnh nhân, chẩn đoán, v.v.).
-- **Safe Dictionary Access**:
-  - Trong `backend/app/services/latex_builder.py`, luôn bóc tách dữ liệu lồng nhau qua hàm an toàn:
-    ```python
-    def _safe_dict(val: Any) -> Dict[str, Any]:
-        return val if isinstance(val, dict) else {}
-    ```
-  - Trường `diaChi` phải hỗ trợ linh hoạt:
-    - Nếu là chuỗi (`"24 Kim Mã, Ba Đình, Hà Nội"`): Tự động gán vào trường thôn/phố (`{"thonPho": dia_chi_raw}`).
-    - Nếu là đối tượng (`{"soNha": ..., "thonPho": ..., "xaPhuong": ...}`): Bóc tách chi tiết từng trường.
-- **Tự động lấp đầy dòng chấm chuẩn Bộ Y tế**: Bất kỳ trường nào bị thiếu hoặc chuỗi rỗng (`""`), renderer phải tự động vẽ dòng kẻ chấm (`\dotfillField{}`) hoặc ô trống (`\charbox{}`), không làm vỡ bố cục in ấn.
-
-### 3.2. Quy Trình Thêm Mẫu Bệnh Án Mới (Zero-Code UI Expansion)
-Khi Bộ Y tế ban hành mẫu bệnh án mới hoặc bổ sung chuyên khoa:
-1. **Không cần viết thêm code React**: Tất cả các phần đều đã được module hóa trong `src/medical-forms/sections/`.
-2. **Khai báo Schema Template**: Tạo file `shared-schemas/templates/<ma_mau>.json`, cấu hình các biến thể:
-   - `headerVariant`: `"standard"` (nội trú) hoặc `"outpatient"` (ngoại trú 2 trang).
-   - `adminVariant`: `"adult"` (người lớn) hoặc `"pediatric"` (nhi khoa có họ tên bố/mẹ).
-   - `diagnosisVariant`: `"internal"`, `"surgical"`, hoặc `"yhct_dual"` (song song YHHĐ - YHCT).
-   - `organFields`: Danh sách các trường khám chuyên khoa động (Tuần hoàn, Hô hấp, Tiêu hóa, Mắt, Tai Mũi Họng...).
-   - `hasRelatedCharacteristicsTable`, `hasGrowthHistory`, `hasSurgicalBlock`.
-3. **Khai báo Dữ liệu Mẫu**: Tạo file `shared-schemas/samples/<ma_mau>.sample.json`.
-4. **Đăng ký vào Registry**: Thêm một mục vào mảng `templates` trong `shared-schemas/registry.json`.
-5. Hệ thống Frontend và Backend API sẽ tự động nhận diện và hỗ trợ mẫu mới 100%.
-
-### 3.3. Quy Chuẩn Khởi Chạy & CLI Windows
-- **Khởi chạy ứng dụng**:
-  - Dùng script [`run.bat`](file:///d:/Form%20Generating/run.bat) tại thư mục gốc để mở đồng thời cả Backend (Port 8000) và Frontend (Port 5173).
-  - Backend phải được chạy từ thư mục `backend` với cú pháp: `.\.venv\Scripts\python.exe -m uvicorn app.main:app --reload --port 8000` (chú ý `app.main:app` và thư mục `.venv` có dấu chấm).
-- **Cú pháp CLI trên Windows PowerShell**:
-  - Ký tự nối dòng trong PowerShell là backtick **`` ` ``** (KHÔNG dùng dấu mũ `^` của CMD).
-  - Khi gửi JSON có tiếng Việt qua cURL trên PowerShell, KHÔNG dán trực tiếp chuỗi vào `-d "..."` để tránh hỏng bảng mã UTF-8. **Luôn dùng:**
-    ```powershell
-    curl.exe -X POST "http://127.0.0.1:8000/api/v1/pdf" `
-      -H "Content-Type: application/json; charset=utf-8" `
-      --data-binary "@file.json" `
-      -o "ket_qua.pdf"
-    ```
-  - Hoặc dùng PowerShell Native: `Invoke-RestMethod -Uri "..." -Method Post -Body (Get-Content -Raw -Encoding UTF8 file.json) -ContentType "application/json; charset=utf-8" -OutFile "ket_qua.pdf"`.
+## 3. Coding Guidelines & Technical Standards
+- **Defensive Coding & Xử lý dữ liệu**:
+  - Luôn dùng `_safe_dict(val)` trong `latex_builder.py` / `pain_record_latex.py` và helper `safeText(val)` trên React (`PainRecordSection.tsx`, `FullFormEditor.tsx`) để chuyển đổi an toàn mọi giá trị (`string | number | object`) sang chuỗi trước khi render JSX, ngăn chặn hoàn toàn lỗi trắng màn hình `Objects are not valid as a React child` khi chuyển đổi giữa các mẫu bệnh án hoặc dán JSON bất kỳ.
+  - Trường bỏ trống hoặc `"N/A"` phải tự động hiển thị đường kẻ chấm in ấn (`\dotfillField{}` hoặc `DottedField`).
+  - Hỗ trợ `diaChi` linh hoạt cả kiểu `string` lẫn `object` (`soNha`, `thonPho`, `xaPhuong`, `huyenQuan`, `tinhThanhPho`).
+- **Quy chuẩn Import & Sắp xếp Ảnh (Image Pipeline)**:
+  - Các đường dẫn ảnh trong JSON và LaTeX dùng đường dẫn tương đối `images/<filename>`.
+  - Thứ tự ảnh bắt buộc trong **Mẫu 30 - Bệnh Án Đau (`30_benh_an_dau`)**:
+    1. Trang 1: `images/logo.jpg` (cao `1.2cm`)
+    2. Trang 7: `images/body_map_clean.png` (cao `6.5cm`, dưới 4 biểu đồ diễn tiến đau)
+    3. Trang 12: `images/full_body_sensory_anterior_posterior.png` (cao `17.5cm`)
+    4. Trang 13: `images/full_body_sensory_lateral.png` (cao `17.5cm`)
+    5. Trang 14: `images/physician_focal_clean.png` (cao `17.5cm`)
+  - Khi biên dịch LaTeX trong thư mục tạm (`work_dir`), `pdf_renderer.py` tự động copy thư mục `PROJECT_ROOT / "images"` vào `work_dir / "images"` để `\includegraphics` luôn tìm thấy file ảnh.
+- **Quy trình mở rộng / Thêm mẫu mới**:
+  1. Tạo `shared-schemas/templates/<id>.json` và `shared-schemas/samples/<id>.sample.json`.
+  2. Đăng ký vào `shared-schemas/registry.json` và `frontend/src/medical-forms/registry/index.ts`.
+  3. Nếu mẫu có layout đặc thù (như `pain_record` 19 trang), bổ sung biến thể vào `MedicalFormRenderer.tsx` và `latex_builder.py`.
+- **Môi trường & CLI Windows**:
+  - Chạy nhanh toàn hệ thống qua `.\run.bat`.
+  - Chạy lẻ Backend: `cd backend && .\.venv\Scripts\python.exe -m uvicorn app.main:app --reload --port 8000`.
+  - Khi gọi cURL trên PowerShell, dùng ký tự ngắt dòng backtick (`` ` ``) và truyền file qua `--data-binary "@file.json"` để bảo toàn UTF-8.
 
 ---
 
-## 4. TRẠNG THÁI HỆ THỐNG TÍCH LŨY (INCREMENTAL SYSTEM STATE)
-
-- [x] **Registry & Templates**: Hoàn tất 100% cấu hình cho **29/29 mẫu bệnh án** Phụ lục XXVIII (Thông tư 32/2023/TT-BYT) trong `shared-schemas/`.
-- [x] **Giao diện Split-View Studio**:
-  - Tab 1: Chỉnh sửa / Dán trực tiếp JSON Raw (tự động parse tức thì).
-  - Tab 2: Full Form Editor (giao diện nhập liệu phủ 100% trường bệnh án).
-  - Tab 3: Form Nhập Nhanh (chỉnh sửa các thông tin cốt lõi).
-  - Tab 4: Cấu trúc Component & Schema.
-  - Live Preview A4: Hỗ trợ chế độ Interactive / Inline Click-to-Edit trực tiếp trên bản in A4.
-- [x] **Backend REST API**:
-  - `GET /api/v1/templates`: Danh mục 29 mẫu.
-  - `GET /api/v1/templates/{id}/sample`: Lấy JSON mẫu điền sẵn.
-  - `POST /api/v1/pdf`: Tự nhận diện mẫu qua dữ liệu và xuất file PDF chuẩn A4.
-  - `POST /api/v1/pdf/{id}`: Xuất PDF theo mẫu chỉ định trên URL.
-  - `POST /api/v1/latex`: Xuất mã nguồn LaTeX `.tex`.
-  - `GET /health`: Health check dịch vụ.
-- [x] **LaTeX Compiler Engine**: Độc lập với trình duyệt, sử dụng XeLaTeX + font Times New Roman, vẽ đầy đủ ô số, dòng chấm, khung sinh hiệu, bảng phẫu thuật, Tứ chẩn YHCT.
-- [x] **Tài liệu & Kịch bản thực thi**:
-  - File `API_GUIDE.md` tài liệu hóa chuẩn REST API, bảng tra cứu 29 mẫu, code mẫu Python/JS/PowerShell.
-  - File `run.bat` tự động kiểm tra môi trường, bật 2 cửa sổ CMD và mở trình duyệt web.
+## 4. Incremental System State (Completed 100%)
+- **Danh mục 30 Mẫu Bệnh Án (`shared-schemas/`)**:
+  - `01/BV1` $\rightarrow$ `29/BV1`: Toàn bộ 29 mẫu bệnh án chuẩn Thông tư 32/2023/TT-BYT.
+  - `30/BV1` (`30_benh_an_dau` - `VM - BS - V1 - 012`): Mẫu **Bệnh Án Đau Toàn Diện (Comprehensive Pain Record)** 19 trang song ngữ Việt - Anh kèm 5 sơ đồ hình ảnh.
+- **Backend FastAPI & LaTeX Engine**:
+  - Endpoints: `GET /api/v1/templates`, `GET /api/v1/templates/{id}`, `GET /api/v1/templates/{id}/sample`, `POST /api/v1/pdf`, `POST /api/v1/pdf/{id}`, `POST /api/v1/render/latex`, `GET /health`.
+  - Mount static `/images` và đồng bộ `images/` vào môi trường biên dịch `xelatex` tạm thời.
+- **Frontend Split-View Studio**:
+  - Hỗ trợ 2 chế độ chính: `Nhập Đầy Đủ (Form)` và `Chỉnh Sửa Bằng JSON` (dán trực tiếp, format, tải/xuất file).
+  - Live Preview A4 chuẩn in ấn cho cả 29 mẫu TT32 và mẫu 19 trang Bệnh Án Đau.
 
 ---
+
+## 5. Memory Maintenance Protocol
+- Chỉ cập nhật **in-place** vào 4 mục trên.
+- Tuyệt đối không append nhật ký theo ngày/phiên.
+- Giữ dung lượng súc tích trong ngân sách token (1.500 – 3.500 tokens).

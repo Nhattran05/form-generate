@@ -1,0 +1,90 @@
+{
+  "id": "30_benh_an_dau",
+  "code": "30/BV1",
+  "officialCode": "VM - BS - V1 - 012",
+  "title": "BỆNH ÁN ĐAU TOÀN DIỆN",
+  "titleEn": "COMPREHENSIVE PAIN RECORD",
+  "layoutGroup": "pain_record_19p",
+  "config": {
+    "headerVariant": "pain_record",
+    "adminVariant": "adult",
+    "managementVariant": "none",
+    "diagnosisVariant": "internal",
+    "dischargeVariant": "none",
+    "hasRelatedCharacteristicsTable": false,
+    "hasGrowthHistory": false,
+    "hasSurgicalBlock": false,
+    "hasTraditionalMedicine": false,
+    "totalPages": 19,
+    "documentCode": "VM - BS - V1 - 012",
+    "imageOrder": [
+      {
+        "page": 1,
+        "key": "logoPath",
+        "path": "images/logo.jpg",
+        "height": "1.2cm",
+        "title": "Logo Bệnh Viện Đa Khoa Quốc Tế Vinmec"
+      },
+      {
+        "page": 7,
+        "key": "painCourse1",
+        "path": "images/pain_course_1.png",
+        "height": "1.5cm",
+        "title": "Biểu đồ diễn tiến đau 1 (+0)"
+      },
+      {
+        "page": 7,
+        "key": "painCourse2",
+        "path": "images/pain_course_2.png",
+        "height": "1.5cm",
+        "title": "Biểu đồ diễn tiến đau 2 (-1)"
+      },
+      {
+        "page": 7,
+        "key": "painCourse3",
+        "path": "images/pain_course_3.png",
+        "height": "1.5cm",
+        "title": "Biểu đồ diễn tiến đau 3 (+1)"
+      },
+      {
+        "page": 7,
+        "key": "painCourse4",
+        "path": "images/pain_course_4.png",
+        "height": "1.5cm",
+        "title": "Biểu đồ diễn tiến đau 4 (+1)"
+      },
+      {
+        "page": 7,
+        "key": "bodyMapImage",
+        "path": "images/body_map_clean.png",
+        "height": "6.5cm",
+        "title": "Sơ đồ vị trí đau trên cơ thể (Body Pain Map)"
+      },
+      {
+        "page": 12,
+        "key": "anhToanThanTruocSau",
+        "path": "images/full_body_sensory_anterior_posterior.png",
+        "height": "17.5cm",
+        "title": "Sơ đồ cảm giác toàn thân (Mặt trước & Mặt sau)"
+      },
+      {
+        "page": 13,
+        "key": "anhToanThanNghieng",
+        "path": "images/full_body_sensory_lateral.png",
+        "height": "17.5cm",
+        "title": "Sơ đồ cảm giác toàn thân (Tư thế nghiêng)"
+      },
+      {
+        "page": 14,
+        "key": "anhCucBo",
+        "path": "images/physician_focal_clean.png",
+        "height": "17.5cm",
+        "title": "Sơ đồ khám cảm giác cục bộ (Mặt, Bàn tay, Vùng kín)"
+      }
+    ],
+    "vitalsFields": [],
+    "organFields": [],
+    "summaryVariant": "internal"
+  }
+}
+

@@ -1,0 +1,311 @@
+{
+  "templateId": "30_benh_an_dau",
+  "header": {
+    "benhVien": "Bệnh Viện Đa Khoa Quốc Tế Vinmec",
+    "khoa": "Trung tâm Điều trị Đau / Pain Clinic Center",
+    "tenBenhAn": "BỆNH ÁN ĐAU",
+    "tenBenhAnEn": "PAIN RECORD",
+    "maSo": "VM - BS - V1 - 012",
+    "logoPath": "images/logo.jpg",
+    "logoHeight": "1.2cm",
+    "bacSyDieuTriDau": "ThS.BS. Nguyễn Minh Tuấn",
+    "nguoiBenh": "LÊ VĂN HÒA",
+    "maNguoiBenh": "PID-2026-08912",
+    "hoiChungChinh": "Đau thần kinh tọa mạn tính sau thoát vị đĩa đệm L4-L5",
+    "ngayKhamDau": "22/10/2026",
+    "dieuDuong": "ĐD. Trần Thị Mai"
+  },
+  "hanhChinh": {
+    "hoVaTen": "LÊ VĂN HÒA",
+    "sinhNgay": "14/05/1974",
+    "tuoi": "52",
+    "gioi": 1,
+    "gioiTinh": "Nam / Male",
+    "diaChi": "Số 128 Nguyễn Chí Thanh, Phường Láng Thượng, Quận Đống Đa, Hà Nội",
+    "datNuoc": "Việt Nam",
+    "quocTich": "Việt Nam",
+    "email": "levanhoa74@email.com",
+    "dtNha": "02438123456",
+    "dtNoiLamViec": "02439876543",
+    "diDong": "0912345678",
+    "ngheNghiep": "Kỹ sư cơ khí",
+    "daKhamBacSiChua": "Đã khám / Yes",
+    "tenVaChuyenNganhBacSi": "PGS.TS. Vũ Văn Hợi - Ngoại Thần kinh Cột sống",
+    "tinhTrangHonNhan": "Đã kết hôn / Married",
+    "soCon": "02",
+    "dangCongTacKhong": "Tạm nghỉ / On leave",
+    "ngheNghiepCongTac": "Kỹ sư trưởng nhà máy",
+    "ngungCongTacViDau": "Có, tạm ngừng công tác 2 tháng nay do đau lưng lan xuống chân trái khi đứng lâu",
+    "benhLyManTinh": "Tăng huyết áp 3 năm, Thoái hóa cột sống thắt lưng",
+    "khuyetTat": "Không / No"
+  },
+  "tienSuBenh": {
+    "diUng": "Không dị ứng thuốc, nhựa cao su hay i-ốt",
+    "phauThuatDaLam": "Phẫu thuật nội soi lấy nhân thoát vị đĩa đệm L4-L5 (08/2023)",
+    "bienChungPhauThuat": "Không có biến chứng trong và ngay sau mổ, tái phát đau sau 2 năm",
+    "benhLyKhacNgoaiNho": "Rối loạn giấc ngủ nhẹ do đau đêm",
+    "benhLyDangDieuTri": "Tăng huyết áp vô căn đang kiểm soát ổn định",
+    "tenThuocVaLieuDung": "Amlodipin 5mg x 1 viên/ngày (sáng); Gabapentin 300mg x 2 viên/ngày",
+    "dungThuocChongDong": "Không / No",
+    "thuocChongDong": "",
+    "lieuThuocChongDong": "",
+    "lyDoChongDong": "",
+    "dungThuocChongNgungTapTieuCau": "Không / No",
+    "thuocChongNgungTap": "",
+    "lieuThuocChongNgungTap": "",
+    "lyDoChongNgungTap": "",
+    "nguyenNhanDauTheoBenhNhan": "Do đặc thù công việc kỹ sư đứng lâu và thoát vị đĩa đệm chèn ép rễ thần kinh",
+    "phuongPhapDieuTriHieuQua": "Vật lý trị liệu kéo giãn cột sống & nhiệt trị liệu (06/2025) - giảm đau khoảng 40%",
+    "xetNghiemCanLamSang": "MRI cột sống thắt lưng (10/2026): Lồi đĩa đệm L4-L5 lệch trái chèn ép rễ L5 trái; Xét nghiệm máu trong giới hạn bình thường"
+  },
+  "benhSuDau": {
+    "ngayBatDau": "15/06/2025",
+    "ngayTangNang": "01/09/2026",
+    "viTriBanDau": "Vùng cột sống thắt lưng L4-L5",
+    "viTriLanToa": "Lan xuống mông trái, mặt ngoài đùi, cẳng chân đến mu bàn chân trái",
+    "khoiPhat": {
+      "dotNgot": false,
+      "tuPhat": false,
+      "tuTu": true,
+      "nhoi": true
+    },
+    "suTienTrien": "Đau tăng dần theo thời gian, nặng lên rõ rệt khi đứng lâu hoặc đi bộ trên 200m",
+    "mieuTaConDau": {
+      "beating": false,
+      "crushed": false,
+      "burning": true,
+      "tingling": true,
+      "stabbing": false,
+      "radiating": true,
+      "cramps": true,
+      "electricShock": true,
+      "scratching": false,
+      "clenching": false,
+      "slenderness": true,
+      "pinsAndNeedles": true
+    },
+    "cuongDoDau": {
+      "lienTucChecked": true,
+      "lienTucMin": "3",
+      "lienTucMax": "6",
+      "tungHoiChecked": false,
+      "tungHoiMin": "",
+      "tungHoiMax": "",
+      "theoConChecked": true,
+      "theoConMin": "5",
+      "theoConMax": "8",
+      "doKichThichChecked": true,
+      "doKichThichNguyenNhan": "Cúi gập người, ho, hắt hơi hoặc ngồi lâu trên 30 phút",
+      "tuPhatChecked": true,
+      "tuPhatBanNgay": "3-4 cơn/ngày, tăng về chiều",
+      "tuPhatBanDem": "1-2 cơn gây thức giấc lúc nửa đêm",
+      "loaiHoatDong": "Đi bộ, leo cầu thang, cúi nhặt đồ vật"
+    },
+    "yeuToTangDau": {
+      "coHoc": true,
+      "cuDong": true,
+      "diBo": true,
+      "khoangCach": false,
+      "tuThe": true,
+      "dung": true,
+      "nam": false,
+      "ngoi": true,
+      "tiepXucDa": false,
+      "tiepXucDonThuan": false,
+      "tiepXucLanh": true,
+      "tiepXucNong": false,
+      "yeuToKhac": true,
+      "metMoi": true,
+      "cangThang": true,
+      "khac": false
+    }
+  },
+  "cuocSongHangNgay": {
+    "sinhHoatGiaDinh": { "value": "Hạn chế phụ giúp việc nhà nặng", "checked": true },
+    "sinhHoatCaNhan": { "value": "Tự phục vụ được nhưng chậm khi cúi mặc quần áo", "checked": true },
+    "hoatDongXaHoi": { "value": "Ít đi lại giao lưu bạn bè xa", "checked": true },
+    "congViec": { "value": "Đang tạm nghỉ phép để điều trị", "checked": true },
+    "tinhCach": { "value": "Đôi khi căng thẳng, lo lắng vì đau kéo dài", "checked": true },
+    "chucNangNhanThuc": { "value": "Giảm tập trung khi cơn đau bùng phát", "checked": false },
+    "giacNgu": { "value": "Khó vào giấc, tỉnh giấc 1-2 lần/đêm", "checked": true },
+    "tamTrang": { "value": "Lo âu nhẹ", "checked": true },
+    "suyGiamChucNangCoThe": { "value": "Hạn chế tầm vận động cúi ngửa cột sống thắt lưng", "checked": true },
+    "matTuChuLaiXe": { "value": "Không lái được xe đường dài trên 30 phút", "checked": true },
+    "matKhaNangThamGiaXaHoi": { "value": "Không mất hoàn toàn, chỉ hạn chế đi xa", "checked": false },
+    "moiTruongNguoiBenh": { "value": "Gia đình hỗ trợ tốt, nhà có thang máy", "checked": false },
+    "dieuKienLamViecAnhHuong": { "value": "Có, công việc đứng giám sát xưởng làm tăng đau", "checked": true },
+    "boiThuongTaiChinh": { "value": "Hưởng chế độ BHYT và bảo hiểm sức khỏe", "checked": false }
+  },
+  "doCuongDoDauVas": {
+    "dauHienTai": 6,
+    "dauNhat4Tuan": 8,
+    "trungBinh4Tuan": 6
+  },
+  "bangDanhGiaDau": {
+    "q1_bongRat": 3,
+    "q2_ramRan": 4,
+    "q3_chamNhe": 1,
+    "q4_dienGiat": 3,
+    "q5_nongLanh": 1,
+    "q6_teBi": 4,
+    "q7_tucNhe": 3,
+    "bacSyDien": {
+      "x0": "0",
+      "x1": "2",
+      "x2": "0",
+      "x3": "9",
+      "x4": "8",
+      "x5": "0",
+      "tongDiem": "19"
+    }
+  },
+  "dienTienVaSoDo": {
+    "selectedCourse": 1,
+    "diemScore": "18",
+    "bodyMapImage": "images/body_map_clean.png"
+  },
+  "cauHoiDn4": {
+    "q1_nongRat": true,
+    "q1_dauLanh": false,
+    "q1_dienGiat": true,
+    "q2_kimCham": true,
+    "q2_ramRan": true,
+    "q2_teBi": true,
+    "q2_ngua": false,
+    "q3_matCamGiacTiepXuc": true,
+    "q3_matCamGiacChichKim": false,
+    "q4_coXat": true,
+    "tongDiem": "7"
+  },
+  "tieuChuanBudapest": {
+    "camGiac_loanCamDau": false,
+    "camGiac_tangCamGiacDau": true,
+    "vanMach_nhietDoDa": false,
+    "vanMach_khacBietMauDa": false,
+    "vanMach_thayDoiMauDa": false,
+    "phuNe_sungNe": false,
+    "phuNe_toatMoHoi": false,
+    "vanDong_hanChe": true,
+    "vanDong_trieuChung": false,
+    "vanDong_thayDoiDinhDuong": false,
+    "ketLuanBudapest": "NO"
+  },
+  "thangTramCamBeck": {
+    "A": 1,
+    "B": 0,
+    "C": 0,
+    "D": 1,
+    "E": 0,
+    "F": 0,
+    "G": 0,
+    "H": 0,
+    "I": 0,
+    "J": 0,
+    "K": 1,
+    "L": 1,
+    "M": 1,
+    "tongDiemBdi": "5"
+  },
+  "khamCamGiacBacSy": {
+    "bacSyDieuTri": "ThS.BS. Nguyễn Minh Tuấn",
+    "ngayKham": "22/10/2026",
+    "gioKham": "09:30",
+    "anhToanThanTruocSau": "images/full_body_sensory_anterior_posterior.png",
+    "anhToanThanNghieng": "images/full_body_sensory_lateral.png",
+    "anhCucBo": "images/physician_focal_clean.png"
+  },
+  "quanSatVaDieuTri": {
+    "thongTinQuanSat": "Bệnh nhân tỉnh táo, dáng đi khập khiễng nhẹ chân trái. Ấn điểm cạnh sống L4-L5 trái đau tức lan xuống mặt ngoài cẳng chân trái. Nghiệm pháp Lasègue trái (+) ở 45 độ. Giảm cảm giác nông vùng da chi phối rễ L5 trái.",
+    "bangDieuTri": [
+      {
+        "dieuTri": "Pregabalin 75mg x 2 viên/ngày",
+        "ngay": "22/10/2026",
+        "thoiGian": "4 tuần",
+        "khaNangThichUng": "Dung nạp tốt, hơi buồn ngủ nhẹ",
+        "tacDung": "Giảm đau bỏng rát và tê bì 50%"
+      },
+      {
+        "dieuTri": "Etoricoxib 60mg x 1 viên/ngày",
+        "ngay": "22/10/2026",
+        "thoiGian": "7 ngày",
+        "khaNangThichUng": "Tốt, không đau dạ dày",
+        "tacDung": "Giảm đau cơ học vùng thắt lưng"
+      },
+      {
+        "dieuTri": "Phong bế rễ thần kinh L5 trái dưới C-arm",
+        "ngay": "24/10/2026",
+        "thoiGian": "1 lần",
+        "khaNangThichUng": "An toàn, không tai biến",
+        "tacDung": "Giảm 75% cường độ cơn đau cấp"
+      }
+    ]
+  },
+  "tongHopKetQua": {
+    "chanDoanMucDoTonThuong": "Tổn thương chèn ép rễ thần kinh L5 bên trái mức độ trung bình - nặng (DN4 = 7/10, VAS = 6-8/10)",
+    "chanDoanCanNguyen": "Đau thần kinh tọa trái mạn tính do lồi/thoát vị đĩa đệm L4-L5 tái phát sau mổ",
+    "dauKhoChiuNhat": "Cơn đau nhói như điện giật kèm bỏng rát dọc mặt ngoài đùi - cẳng chân trái về đêm",
+    "yeuToCanNguyen": {
+      "yeuToChung": "Chèn ép cơ học phối hợp viêm thần kinh ngoại biên",
+      "nhiemTrung": "Không",
+      "chanThuong": "Vi chấn thương tích lũy do tư thế lao động",
+      "machMau": "Không",
+      "chuyenHoa": "Không",
+      "viemNhiem": "Phản ứng viêm quanh rễ thần kinh L5 trái",
+      "nhiemDoc": "Không",
+      "khac": "Thoái hóa cột sống thắt lưng"
+    }
+  },
+  "dieuTriXamLan": {
+    "loaiThuThuat": "Tiêm phong bế chọn lọc rễ thần kinh L5 qua lỗ liên hợp dưới hướng dẫn C-arm",
+    "mucDo": "L4-L5 bên trái",
+    "loaiBlock": "Transforaminal Epidural Steroid Injection (TFESI)",
+    "side": "Trái / Left",
+    "maIcd10": "M54.16",
+    "maCpt": "64483",
+    "ngay": "24/10/2026",
+    "gio": "14:00",
+    "camKet": {
+      "loiIchNguyCo": true,
+      "huongDanNhapVien": true,
+      "huongDanGia": true,
+      "thongTinGhiChep": true
+    },
+    "baoCaoThuThuat": "Bệnh nhân nằm sấp, sát khuẩn vô trùng vùng thắt lưng. Dưới hướng dẫn màn hình tăng sáng C-arm, đưa kim 22G vào đúng vị trí lỗ liên hợp L4-L5 bên trái, kiểm tra thuốc cản quang lan dọc bao rễ L5 tốt, không vào mạch máu. Tiêm hỗn hợp Ropivacain 0.2% (2ml) + Dexamethason 4mg. Sau tiêm 30 phút sinh hiệu ổn định, VAS giảm từ 7 xuống 2."
+  },
+  "chanDoanDinhHuong": {
+    "ngoaiBien": {
+      "duoiDa": false,
+      "trucTk": false,
+      "reTk": true
+    },
+    "trungUong": {
+      "tuySong": false,
+      "canhTuySong": false
+    },
+    "uuTienNguoiBenh": "Kiểm soát cơn đau về đêm để ngủ ngon và phục hồi khả năng đi đứng làm việc",
+    "mucDoCaiThienChapNhan": "Giảm ít nhất 65-70% mức độ đau (VAS <= 2/10)",
+    "thaiDoVoiDieuTriDacBiet": "Hợp tác tốt, tuân thủ phác đồ thuốc giảm đau thần kinh",
+    "deXuatKeHoach": "Kết hợp phong bế rễ thần kinh L5 trái + duy trì Pregabalin 150mg/ngày + tập phục hồi chức năng cơ lõi cột sống",
+    "loiIch": "Giảm nhanh phù nề rễ thần kinh, tránh phải phẫu thuật mở lại cột sống",
+    "tyLeThanhCong": "80",
+    "nguyCo": "Tê nhẹ tạm thời chân trái trong vài giờ đầu, đau nhẹ tại chỗ tiêm",
+    "nguoiBenhDongY": "YES"
+  },
+  "theoDoi": {
+    "lichTrinh": [
+      {
+        "ngay": "31/10/2026",
+        "bacSyDieuTri": "ThS.BS. Nguyễn Minh Tuấn",
+        "buocTiepTheo": "Đánh giá lại thang điểm VAS, DN4 sau phong bế 1 tuần; chỉnh liều Pregabalin",
+        "lanKhamTiepTheo": "14/11/2026"
+      },
+      {
+        "ngay": "14/11/2026",
+        "bacSyDieuTri": "ThS.BS. Nguyễn Minh Tuấn",
+        "buocTiepTheo": "Bắt đầu chương trình tập Vật lý trị liệu - Phục hồi chức năng cột sống",
+        "lanKhamTiepTheo": "14/12/2026"
+      }
+    ]
+  }
+}
+

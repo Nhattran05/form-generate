@@ -5,6 +5,7 @@ import { ClinicalRecordSection } from '../sections/ClinicalRecordSection';
 import { DiagnosisSection } from '../sections/DiagnosisSection';
 import { DischargeStatusSection } from '../sections/DischargeStatusSection';
 import { HeaderSection } from '../sections/HeaderSection';
+import { PainRecordSection } from '../sections/PainRecordSection';
 import { PatientManagementSection } from '../sections/PatientManagementSection';
 import { SummarySection } from '../sections/SummarySection';
 import { MedicalRecordJsonData, MedicalTemplateSchema } from '../types/form.types';
@@ -18,6 +19,11 @@ export const MedicalFormRenderer: React.FC<{
   data: MedicalRecordJsonData;
 }> = ({ schema, data }) => {
   const { config } = schema;
+
+  // Trường hợp đặc biệt: Bệnh án Đau Toàn diện (30/BV1 - VM-BS-V1-012, 19 trang song ngữ)
+  if (config.headerVariant === 'pain_record' || schema.id === '30_benh_an_dau') {
+    return <PainRecordSection schema={schema} data={data} />;
+  }
 
   // Trường hợp 1: Bệnh án Ngoại trú (2 trang: Trang 1 = Hành chính + Bệnh án; Trang 2 = Tổng kết)
   if (config.headerVariant === 'outpatient') {

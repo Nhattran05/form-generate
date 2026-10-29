@@ -1,5 +1,11 @@
 from typing import Any, Dict, List
 
+from app.services.pain_record_latex import build_pain_record_latex
+
+
+def _safe_dict(val: Any) -> Dict[str, Any]:
+    return val if isinstance(val, dict) else {}
+
 
 def _tex_escape(text: Any, allow_newlines: bool = False) -> str:
     if text is None:
@@ -78,8 +84,11 @@ def build_latex_from_json(template_config: Dict[str, Any], data: Dict[str, Any])
     Chuyển đổi dữ liệu JSON + Template Config sang mã nguồn LaTeX (.tex) chuẩn A4 Bộ Y tế.
     Căn chỉnh tỷ lệ chuẩn để Trang 1 chứa trọn vẹn Header + Mục I, II, III, IV + Chữ ký Giám đốc/Trưởng khoa.
     """
-    cfg = template_config.get("config", {})
+    cfg = _safe_dict(template_config.get("config"))
     header_variant = cfg.get("headerVariant", "standard")
+    if header_variant == "pain_record" or template_config.get("id") == "30_benh_an_dau":
+        return build_pain_record_latex(template_config, data)
+
     admin_variant = cfg.get("adminVariant", "adult")
     diag_variant = cfg.get("diagnosisVariant", "internal")
     summary_variant = cfg.get("summaryVariant", "internal")
@@ -88,23 +97,27 @@ def build_latex_from_json(template_config: Dict[str, Any], data: Dict[str, Any])
     has_surgical_block = bool(cfg.get("hasSurgicalBlock", False))
     has_yhct = bool(cfg.get("hasTraditionalMedicine", False))
 
-    header = data.get("header", {})
-    hc = data.get("hanhChinh", {})
-    ql = data.get("quanLyNguoiBenh", {})
-    cd = data.get("chanDoan", {})
-    ttrv = data.get("tinhTrangRaVien", {})
-    ba = data.get("benhAn", {})
-    tk = data.get("tongKet", {})
+    header = _safe_dict(data.get("header"))
+    hc = _safe_dict(data.get("hanhChinh"))
+    ql = _safe_dict(data.get("quanLyNguoiBenh"))
+    cd = _safe_dict(data.get("chanDoan"))
+    ttrv = _safe_dict(data.get("tinhTrangRaVien"))
+    ba = _safe_dict(data.get("benhAn"))
+    tk = _safe_dict(data.get("tongKet"))
 
     title = _tex_escape(header.get("tenBenhAn") or template_config.get("title", "BỆNH ÁN"))
     ma_so = _tex_escape(header.get("maSo") or template_config.get("officialCode", "MS: 01/BV-01"))
-    dia_chi = hc.get("diaChi", {})
-    hoi_benh = ba.get("hoiBenh", {})
-    kham_benh = ba.get("khamBenh", {})
-    sinh_hieu = kham_benh.get("sinhHieu", {})
-    co_quan = kham_benh.get("coQuan", {})
-    cd_khoa = ba.get("chanDoanKhoa", {})
-    ho_so = tk.get("hoSoPhimAnh", {})
+    raw_dia_chi = hc.get("diaChi")
+    if isinstance(raw_dia_chi, str):
+        dia_chi: Dict[str, Any] = {"soNha": raw_dia_chi}
+    else:
+        dia_chi = _safe_dict(raw_dia_chi)
+    hoi_benh = _safe_dict(ba.get("hoiBenh"))
+    kham_benh = _safe_dict(ba.get("khamBenh"))
+    sinh_hieu = _safe_dict(kham_benh.get("sinhHieu"))
+    co_quan = _safe_dict(kham_benh.get("coQuan"))
+    cd_khoa = _safe_dict(ba.get("chanDoanKhoa"))
+    ho_so = _safe_dict(tk.get("hoSoPhimAnh"))
 
     preamble = rf"""% =====================================================================
 % MẪU BỆNH ÁN BỘ Y TẾ (THÔNG TƯ 32/2023/TT-BYT - PHỤ LỤC XXVIII)

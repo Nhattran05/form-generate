@@ -4,8 +4,16 @@ export interface OrganFieldSchema {
   lines?: number;
 }
 
+export interface PainRecordImageItem {
+  order: number;
+  page: number;
+  src: string;
+  height?: string;
+  caption?: string;
+}
+
 export interface TemplateConfig {
-  headerVariant: 'standard' | 'outpatient' | 'yhct';
+  headerVariant: 'standard' | 'outpatient' | 'yhct' | 'pain_record';
   adminVariant: 'adult' | 'pediatric' | 'outpatient' | 'yhct';
   managementVariant: 'inpatient' | 'none';
   diagnosisVariant: 'internal' | 'surgical' | 'yhct_dual' | 'none';
@@ -14,6 +22,9 @@ export interface TemplateConfig {
   hasGrowthHistory?: boolean;
   hasSurgicalBlock?: boolean;
   hasTraditionalMedicine?: boolean;
+  totalPages?: number;
+  documentCode?: string;
+  imageOrder?: PainRecordImageItem[];
   vitalsFields: string[];
   organFields: OrganFieldSchema[];
   summaryVariant: 'internal' | 'surgical' | 'outpatient' | 'yhct';

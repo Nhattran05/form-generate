@@ -4,12 +4,14 @@ import tpl02 from '@shared-schemas/templates/02_nhi_khoa.json';
 import tpl10 from '@shared-schemas/templates/10_ngoai_khoa.json';
 import tpl15 from '@shared-schemas/templates/15_ngoai_tru.json';
 import tpl18 from '@shared-schemas/templates/18_yhct_noi_tru.json';
+import tpl30 from '@shared-schemas/templates/30_benh_an_dau.json';
 
 import sample01 from '@shared-schemas/samples/01_noi_khoa.sample.json';
 import sample02 from '@shared-schemas/samples/02_nhi_khoa.sample.json';
 import sample10 from '@shared-schemas/samples/10_ngoai_khoa.sample.json';
 import sample15 from '@shared-schemas/samples/15_ngoai_tru.sample.json';
 import sample18 from '@shared-schemas/samples/18_yhct_noi_tru.sample.json';
+import sample30 from '@shared-schemas/samples/30_benh_an_dau.sample.json';
 
 import {
   MedicalRecordJsonData,
@@ -23,6 +25,7 @@ const SCHEMA_MAP: Record<string, MedicalTemplateSchema> = {
   'templates/10_ngoai_khoa.json': tpl10 as unknown as MedicalTemplateSchema,
   'templates/15_ngoai_tru.json': tpl15 as unknown as MedicalTemplateSchema,
   'templates/18_yhct_noi_tru.json': tpl18 as unknown as MedicalTemplateSchema,
+  'templates/30_benh_an_dau.json': tpl30 as unknown as MedicalTemplateSchema,
 };
 
 const SAMPLE_MAP: Record<string, MedicalRecordJsonData> = {
@@ -31,6 +34,7 @@ const SAMPLE_MAP: Record<string, MedicalRecordJsonData> = {
   'samples/10_ngoai_khoa.sample.json': sample10 as unknown as MedicalRecordJsonData,
   'samples/15_ngoai_tru.sample.json': sample15 as unknown as MedicalRecordJsonData,
   'samples/18_yhct_noi_tru.sample.json': sample18 as unknown as MedicalRecordJsonData,
+  'samples/30_benh_an_dau.sample.json': sample30 as unknown as MedicalRecordJsonData,
 };
 
 export const ALL_TEMPLATES: RegistryTemplateMeta[] = registryData.templates;

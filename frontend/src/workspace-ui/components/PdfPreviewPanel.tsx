@@ -20,7 +20,12 @@ export const PdfPreviewPanel: React.FC<PdfPreviewPanelProps> = ({
   const [zoom, setZoom] = useState<number>(0.85);
   const [directEditPaper, setDirectEditPaper] = useState<boolean>(false);
 
-  const pageCount = schema.config.headerVariant === 'outpatient' ? 2 : 3;
+  const pageCount =
+    schema.config.headerVariant === 'pain_record' || schema.id === '30_benh_an_dau'
+      ? schema.config.totalPages || 19
+      : schema.config.headerVariant === 'outpatient'
+      ? 2
+      : 3;
 
   return (
     <div className="flex flex-col h-full bg-slate-200/80 overflow-hidden">

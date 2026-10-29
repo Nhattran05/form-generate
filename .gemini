@@ -10,7 +10,71 @@
 - **Mô hình kiến trúc cốt lõi (Dual-Engine Architecture)**:
   1. **Engine 1 - Client Web Studio (React + Vite + TailwindCSS)**:
      - Giao diện Split-View 2 cột: Cột trái hỗ trợ 4 chế độ nhập liệu (Dán trực tiếp JSON Raw, Form Nhập Đầy Đủ 100% trường `FullFormEditor`, Form Nhập Nhanh, và Xem Schema Component).
-     - Cột phải: Live Preview khổ giấy A4 chuẩn bản in, hỗ trợ chế độ sửa trực tiếp (Inline Click-to-Edit) đồng bộ 2 chiều tức thì với JSON và Form bên trái.
+     - Cột phải: Live Preview khổ giấy A4 chuẩn bản in, hỗ trợ chế độ ## 2. Quản Lý Bộ Nhớ Hệ Thống `.gemini` (Incremental Summary)
+
+### Nguyên tắc cốt lõi
+1. **Không bao giờ append theo ngày / theo session**. Chỉ cập nhật **in-place** vào các mục cố định.
+2. **Mục tiêu duy trì**: 1.500 – 3.500 tokens (khoảng 1.200 – 2.800 từ tiếng Việt + code).
+3. **Ưu tiên thông tin có giá trị lâu dài** hơn thông tin tạm thời.
+4. Mỗi lần update phải **xóa hoặc gộp** phần đã lỗi thời.
+
+### Cấu trúc bắt buộc (giữ đúng thứ tự)
+
+1. **System Architecture Overview** (mục đích + tech stack + luồng chính + engine cốt lõi)
+2. **Codebase Map & Directory Conventions** (vai trò từng thư mục/file quan trọng)
+3. **Coding Guidelines & Technical Standards** (defensive coding, pattern 0-code, convention, error handling…)
+4. **Incremental System State** (chỉ những gì **đã hoàn thành 100%** – feature, endpoint, schema, migration…)
+5. **Memory Maintenance Protocol** (quy định update)
+6. **Context Budget** (ghi rõ giới hạn token hiện tại + mục tiêu)
+
+### Quy tắc cập nhật cụ thể
+
+- **Chỉ ghi những gì đã ổn định**. Feature đang làm dở → không đưa vào mục 4.
+- Khi refactor lớn → rewrite lại mục 1 + 2, xóa phần cũ.
+- Endpoint/schema mới xong → thêm vào mục 4, đồng thời kiểm tra xem có cần cập nhật mục 1 hoặc 2 không.
+- Xóa ngay các mục đã deprecate hoặc đã thay thế hoàn toàn.
+- Không viết “ngày X làm Y”. Thay bằng trạng thái hiện tại.
+- Giữ ngôn ngữ súc tích, ưu tiên bullet + code reference ngắn.
+
+### Checklist trước khi commit/update `.gemini`
+
+- [ ] File < 3.500 tokens?
+- [ ] Không còn thông tin outdated?
+- [ ] Mục 4 chỉ chứa thứ đã 100%?
+- [ ] AI đọc file này có đủ context để code tiếp mà không cần hỏi lại kiến trúc không?
+
+### Template gợi ý (rút gọn)
+
+```markdown
+# .gemini – System Memory
+
+## 1. System Architecture Overview
+- Mục đích: ...
+- Stack: ...
+- Core flow: ...
+- Engine chính: ...
+
+## 2. Codebase Map
+- `/src/...` → ...
+- File trung tâm: ...
+
+## 3. Coding Guidelines
+- Defensive: ...
+- Pattern thêm feature: ...
+- Convention: ...
+
+## 4. Incremental System State (Completed 100%)
+- Feature A: ...
+- Endpoint /api/...: ...
+- Schema: ...
+
+## 5. Memory Maintenance Protocol
+- Chỉ update in-place.
+- Giữ ≤ 3.500 tokens.
+- Xóa phần lỗi thời ngay khi thay đổi.
+
+## 6. Context Budget
+Current: ~XXXX tokens | Target: 1.500–3.500sửa trực tiếp (Inline Click-to-Edit) đồng bộ 2 chiều tức thì với JSON và Form bên trái.
      - Hỗ trợ in ấn chuẩn bản in (`@media print` và CSS Print rules).
   2. **Engine 2 - Server Renderer (FastAPI + XeLaTeX / PdfLaTeX)**:
      - Chuyển đổi JSON thành mã nguồn LaTeX (`.tex`) thông qua `latex_builder.py`.
@@ -163,13 +227,3 @@ Khi Bộ Y tế ban hành mẫu bệnh án mới hoặc bổ sung chuyên khoa:
   - File `run.bat` tự động kiểm tra môi trường, bật 2 cửa sổ CMD và mở trình duyệt web.
 
 ---
-
-## 5. GIAO THỨC DUY TRÌ BỘ NHỚ (MEMORY MAINTENANCE PROTOCOL)
-
-Khi thực hiện các yêu cầu mới trong tương lai:
-1. **Không ghi nối tiếp các log vụn vặt**: Không thêm các block log dài dòng theo mốc thời gian làm loãng tài liệu.
-2. **Cập nhật theo kiểu Incremental Summary**:
-   - Nếu có thay đổi về kiến trúc/file mới: Cập nhật trực tiếp vào **Mục 2 (Bản Đồ Cấu Trúc Mã Nguồn)**.
-   - Nếu có quy tắc code mới hoặc mẹo xử lý lỗi: Bổ sung vào **Mục 3 (Nguyên Tắc Lập Trình & Tiêu Chuẩn Kỹ Thuật)**.
-   - Nếu hoàn thành tính năng hoặc endpoint mới: Tích chọn và bổ sung vào **Mục 4 (Trạng Thái Hệ Thống Tích Lũy)**.
-3. Luôn giữ file này là **Kim chỉ nam kỹ thuật chuẩn xác nhất** để hỗ trợ AI Agent và lập trình viên tra cứu và phát triển code tức thì.
